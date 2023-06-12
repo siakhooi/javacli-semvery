@@ -1,11 +1,11 @@
 sing.app.semvery.VersionTest.testPrintApplicationVersion=[
-semvery 0.0.1
+semvery 0.0.2
 
 ]
 
 
 sing.app.semvery.VersionTest.testPrintHelp=[
-semvery 0.0.1
+semvery 0.0.2
 Usage: semvery [options]
   Options:
     --version, -v
@@ -19,6 +19,6 @@ Usage: semvery [options]
 
 
 sing.app.semvery.VersionTest.testPrintVersion=[
-0.0.1
+0.0.2
 
 ]

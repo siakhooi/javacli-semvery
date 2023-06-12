@@ -1,5 +1,5 @@
 sing.app.semvery.SemveryTest.callMainWithHelp=[
-semvery 0.0.1
+semvery 0.0.2
 Usage: semvery [options]
   Options:
     --version, -v
@@ -13,6 +13,6 @@ Usage: semvery [options]
 
 
 sing.app.semvery.SemveryTest.callMainWithVersion=[
-0.0.1
+0.0.2
 
 ]

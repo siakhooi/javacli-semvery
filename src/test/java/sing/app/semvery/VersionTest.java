@@ -38,7 +38,7 @@ class VersionTest {
 
   @Test
   void testGetAPPLICATION_VERSION() {
-    assertEquals("0.0.1", Version.getAPPLICATION_VERSION());
+    assertEquals("0.0.2", Version.getAPPLICATION_VERSION());
   }
 
   @Test
