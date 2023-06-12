@@ -1,0 +1,11 @@
+sing.app.semvery.ParametersTest.testPrintUsage=[
+Usage: semvery [options]
+  Options:
+    --version, -v
+      Display version
+      Default: false
+    --help, -h
+      Display help
+.
+.
+]

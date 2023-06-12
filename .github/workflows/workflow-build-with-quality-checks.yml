@@ -1,0 +1,9 @@
+name: Build and Test on Push
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build-maven-deb:
+    uses: ./.github/workflows/build-maven-deb.yml

@@ -1,0 +1,18 @@
+sing.app.semvery.SemveryTest.callMainWithHelp=[
+semvery 0.0.1
+Usage: semvery [options]
+  Options:
+    --version, -v
+      Display version
+      Default: false
+    --help, -h
+      Display help
+.
+.
+]
+
+
+sing.app.semvery.SemveryTest.callMainWithVersion=[
+0.0.1
+
+]

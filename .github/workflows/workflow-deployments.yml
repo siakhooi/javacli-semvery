@@ -1,0 +1,19 @@
+name: Deployment
+on:
+  release:
+    types: [created]
+
+
+jobs:
+  build-maven-deb:
+    uses: ./.github/workflows/build-maven-deb.yml
+  release-assets:
+    needs: build-maven-deb
+    uses: ./.github/workflows/deploy-github-release-assets.yml
+    secrets:
+      TOKEN_TO_UPLOAD_ASSETS: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
+  siakhooi-apt:
+    needs: build-maven-deb
+    uses: ./.github/workflows/publish-to-siakhooi-apt.yml
+    secrets:
+      PUBLISH_TO_APT_GITHUB_TOKEN: ${{ secrets.PUBLISH_TO_APT_GITHUB_TOKEN }}
