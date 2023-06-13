@@ -13,4 +13,12 @@ public class Console {
     static void println(Object object) {
         System.out.println(object);
     }
+
+    static void error(Object object) {
+        System.err.println(object);
+    }
+
+    static void exit(int exitCode) {
+        System.exit(exitCode);
+    }
 }

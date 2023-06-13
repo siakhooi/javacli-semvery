@@ -1,10 +1,11 @@
 sing.app.semvery.SemveryTest.callMainWithHelp=[
-semvery 0.0.2
+semvery 0.1.0
 Usage: semvery [options]
   Options:
+    --operation, -o
+      Operation, value = [isValid]
     --version, -v
       Display version
-      Default: false
     --help, -h
       Display help
 .
@@ -13,6 +14,6 @@ Usage: semvery [options]
 
 
 sing.app.semvery.SemveryTest.callMainWithVersion=[
-0.0.2
+0.1.0
 
 ]

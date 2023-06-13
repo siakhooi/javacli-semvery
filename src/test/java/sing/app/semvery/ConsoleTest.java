@@ -1,39 +1,44 @@
 package sing.app.semvery;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.catchSystemExit;
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemErr;
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class ConsoleTest {
-  PrintStream stdout;
-  ByteArrayOutputStream baos;
-
-  @BeforeEach
-  void setup() {
-    stdout = System.out;
-    baos = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(baos));
-  }
-
-  @AfterEach
-  void teardown() throws IOException {
-    System.setOut(stdout);
-    baos.close();
+  @Test
+  void testPrintf() throws Exception {
+    String text = tapSystemOut(() -> {
+      Console.printf("%s", "ABC");
+    });
+    assertEquals("ABC", text);
   }
 
   @Test
-  void testPrintf() {
-    Console.printf("%s", "ABC");
-    assertEquals("ABC", baos.toString());
+  void testPrintln() throws Exception {
+    String text = tapSystemOut(() -> {
+      Console.println("ABC");
+    });
+    assertEquals("ABC" + System.lineSeparator(), text);
+  }
+
+  @ParameterizedTest
+  @ValueSource(ints = {0, 1, 2})
+  void testExit(int value) throws Exception {
+    int statusCode = catchSystemExit(() -> {
+      Console.exit(value);
+    });
+    assertEquals(value, statusCode);
   }
 
   @Test
-  void testPrintln() {
-    Console.println("ABC");
-    assertEquals("ABC" + System.lineSeparator(), baos.toString());
+  void testError() throws Exception {
+    String text = tapSystemErr(() -> {
+      Console.error("ABC");
+    });
+    assertEquals("ABC" + System.lineSeparator(), text);
   }
 }

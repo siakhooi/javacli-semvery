@@ -1,16 +1,17 @@
 sing.app.semvery.VersionTest.testPrintApplicationVersion=[
-semvery 0.0.2
+semvery 0.1.0
 
 ]
 
 
 sing.app.semvery.VersionTest.testPrintHelp=[
-semvery 0.0.2
+semvery 0.1.0
 Usage: semvery [options]
   Options:
+    --operation, -o
+      Operation, value = [isValid]
     --version, -v
       Display version
-      Default: false
     --help, -h
       Display help
 .
@@ -19,6 +20,6 @@ Usage: semvery [options]
 
 
 sing.app.semvery.VersionTest.testPrintVersion=[
-0.0.2
+0.1.0
 
 ]

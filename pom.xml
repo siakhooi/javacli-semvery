@@ -7,7 +7,7 @@
 
   <groupId>sing.app</groupId>
   <artifactId>semvery</artifactId>
-  <version>0.0.2</version>
+  <version>0.1.0</version>
   <name>semvery</name>
   <url>https://github.com/siakhooi/javacli-semvery</url>
 
@@ -22,9 +22,12 @@
 
     <junit.version>5.10.0-M1</junit.version>
     <jcommander.version>1.82</jcommander.version>
-    <lombok.version>1.18.24</lombok.version>
+    <lombok.version>1.18.28</lombok.version>
     <snapshot-testing.version>4.0.6</snapshot-testing.version>
     <mockito.version>5.3.1</mockito.version>
+    <semver4j.version>4.3.0</semver4j.version>
+    <slf4j-simple.version>2.0.7</slf4j-simple.version>
+    <system-lambda.version>1.2.1</system-lambda.version>
 
     <sonar.organization>siakhooi</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -62,7 +65,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>2.0.0-alpha0</version>
+      <version>${slf4j-simple.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -70,6 +73,16 @@
       <artifactId>mockito-junit-jupiter</artifactId>
       <version>${mockito.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.stefanbirkner</groupId>
+      <artifactId>system-lambda</artifactId>
+      <version>${system-lambda.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.semver4j</groupId>
+      <artifactId>semver4j</artifactId>
+      <version>${semver4j.version}</version>
     </dependency>
   </dependencies>
 

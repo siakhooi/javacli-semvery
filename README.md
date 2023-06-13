@@ -62,16 +62,30 @@ sudo apt update
 sudo apt install siakhooi-semvery
 ```
 
+## URL
+
+### Reference
+
+- <https://semver.org/>
+- <https://github.com/semver4j/semver4j>
+
+### Quality
+
+- CodeClimate: <https://codeclimate.com/github/siakhooi/javacli-semvery>
+- SonarCloud: <https://sonarcloud.io/project/overview?id=siakhooi_javacli-semvery>
+
 ## Run
 
 ```bash
 semvery
 
 semvery -v
-
 semvery --version
 
 semvery -h
-
 semvery --help
+
+semvery -o isValid 1.0.1
+semvery --operation isValid 1.0.1
+
 ```
