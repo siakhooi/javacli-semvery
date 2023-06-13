@@ -18,7 +18,7 @@ public class Semvery {
         } else if (parameters.version) {
             Version.printVersion();
         } else if ("isValid".equals(parameters.operation)) {
-            if (parameters.mainParameters.size() == 0) {
+            if (parameters.mainParameters.isEmpty()) {
                 Console.exit(2);
             } else {
                 String value = parameters.mainParameters.get(0);

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import com.beust.jcommander.ParameterException;
 
-public class OperationParameterValidatorTest {
+class OperationParameterValidatorTest {
   OperationParameterValidator testObject;
 
   @BeforeEach
