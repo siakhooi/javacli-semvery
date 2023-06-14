@@ -1,5 +1,5 @@
-sing.app.semvery.SemveryTest.callMainWithHelp=[
-semvery 0.1.0
+sing.app.semvery.SemveryTest.callMainWithArguments=[
+semvery 0.2.0
 Usage: semvery [options]
   Options:
     --operation, -o
@@ -8,12 +8,63 @@ Usage: semvery [options]
       Display version
     --help, -h
       Display help
-.
-.
+
+Details:
+  -o isValid version
+  --operation isValid version
+
+    Example:
+      -o isValid 1.0.0
+      -o isValid ABC
+
+]
+
+
+sing.app.semvery.SemveryTest.callMainWithHelp=[
+semvery 0.2.0
+Usage: semvery [options]
+  Options:
+    --operation, -o
+      Operation, value = [isValid]
+    --version, -v
+      Display version
+    --help, -h
+      Display help
+
+Details:
+  -o isValid version
+  --operation isValid version
+
+    Example:
+      -o isValid 1.0.0
+      -o isValid ABC
+
+]
+
+
+sing.app.semvery.SemveryTest.callMainWithNoArguments=[
+semvery 0.2.0
+Usage: semvery [options]
+  Options:
+    --operation, -o
+      Operation, value = [isValid]
+    --version, -v
+      Display version
+    --help, -h
+      Display help
+
+Details:
+  -o isValid version
+  --operation isValid version
+
+    Example:
+      -o isValid 1.0.0
+      -o isValid ABC
+
 ]
 
 
 sing.app.semvery.SemveryTest.callMainWithVersion=[
-0.1.0
+0.2.0
 
 ]

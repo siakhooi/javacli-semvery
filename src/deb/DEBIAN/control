@@ -1,5 +1,5 @@
 Package: siakhooi-semvery
-Version: 0.1.0
+Version: 0.2.0
 Maintainer: Siak Hooi <siakhooi@gmail.com>
 Depends: default-jre-headless|openjdk-17-jre-headless|openjdk-18-jre-headless|openjdk-19-jre-headless
 Architecture: amd64

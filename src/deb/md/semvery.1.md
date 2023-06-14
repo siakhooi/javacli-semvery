@@ -15,7 +15,18 @@ semver utils.\
 \ \ \ \ \ \ Print command-line options.\
 \ \
 \ \ \ -v, --version\
-\ \ \ \ \ \ Print semvery version.
+\ \ \ \ \ \ Print semvery version.\
+\ \
+\ \ \ -o, --operation operator value\
+\ \ \ \ \ \ Operation, valid operator is **isValid**
+
+# EXAMPLES
+
+\ \ \ semvery -o isValid 1.0.0\
+\ \ \ \ \ \ valid\
+\ \
+\ \ \ semvery -o isValid ABC\
+\ \ \ \ \ \ invalid
 
 # LICENSE
 MIT

@@ -1,0 +1,20 @@
+sing.app.semvery.HelpTest.testPrintHelp=[
+semvery 0.2.0
+Usage: semvery [options]
+  Options:
+    --operation, -o
+      Operation, value = [isValid]
+    --version, -v
+      Display version
+    --help, -h
+      Display help
+
+Details:
+  -o isValid version
+  --operation isValid version
+
+    Example:
+      -o isValid 1.0.0
+      -o isValid ABC
+
+]

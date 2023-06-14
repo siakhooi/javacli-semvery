@@ -1,6 +1,7 @@
 package sing.app.semvery;
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.catchSystemExit;
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemErr;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
@@ -18,7 +19,10 @@ class SemveryisValidTest {
     @ValueSource(strings = {"-o", "--operation"})
     void testIsValid_no_value(String operation) throws Exception {
         int statusCode = catchSystemExit(() -> {
-            Semvery.main(new String[] {operation, IS_VALID});
+            String error = tapSystemErr(() -> {
+                Semvery.main(new String[] {operation, IS_VALID});
+            });
+            assertEquals("Must specify a version.", error);
         });
         assertEquals(2, statusCode);
     }

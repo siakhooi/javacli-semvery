@@ -1,0 +1,7 @@
+Details:
+  -o isValid version
+  --operation isValid version
+
+    Example:
+      -o isValid 1.0.0
+      -o isValid ABC

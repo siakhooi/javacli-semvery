@@ -1,25 +1,10 @@
 sing.app.semvery.VersionTest.testPrintApplicationVersion=[
-semvery 0.1.0
+semvery 0.2.0
 
-]
-
-
-sing.app.semvery.VersionTest.testPrintHelp=[
-semvery 0.1.0
-Usage: semvery [options]
-  Options:
-    --operation, -o
-      Operation, value = [isValid]
-    --version, -v
-      Display version
-    --help, -h
-      Display help
-.
-.
 ]
 
 
 sing.app.semvery.VersionTest.testPrintVersion=[
-0.1.0
+0.2.0
 
 ]
