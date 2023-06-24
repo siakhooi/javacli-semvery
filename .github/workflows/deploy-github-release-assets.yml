@@ -31,3 +31,8 @@ jobs:
           repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
           file_glob: true
           file: ./*.deb.sha512sum
+      - uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
+          file_glob: true
+          file: ./target/*.jar

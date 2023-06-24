@@ -23,6 +23,7 @@ jobs:
           path: |
             ./*.deb
             ./*.deb.*sum
+            ./target/*.jar
       - uses: actions/upload-artifact@v3
         with:
           name: target
