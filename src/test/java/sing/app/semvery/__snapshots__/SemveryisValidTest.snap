@@ -1,0 +1,16 @@
+sing.app.semvery.SemveryisValidTest.testIsValid_bad=[
+invalid
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_good=[
+valid
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_no_value=[
+Must specify a version.
+
+]

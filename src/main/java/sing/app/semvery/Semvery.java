@@ -6,37 +6,39 @@ import org.semver4j.Semver;
 public class Semvery {
     public static void main(String[] args) throws IOException {
         Semvery app = new Semvery();
-        app.run(args);
+        System.exit(app.run(args));
     }
 
     Parameters parameters;
 
-    private void run(String[] args) throws IOException {
+    int run(String[] args) throws IOException {
         parameters = new Parameters();
         parameters.process(args);
         if (parameters.help) {
             Help.printHelp(parameters);
+            return 0;
         } else if (parameters.version) {
             Version.printVersion();
+            return 0;
         } else if ("isValid".equals(parameters.operation)) {
             if (parameters.mainParameters.isEmpty()) {
                 Console.error("Must specify a version.");
-                Console.exit(2);
+                return 2;
             } else {
                 String value = parameters.mainParameters.get(0);
                 Semver version = Semver.parse(value);
                 if (version == null) {
                     Console.println("invalid");
-                    Console.exit(1);
-
+                    return 1;
                 } else {
                     Console.println("valid");
-                    Console.exit(0);
+                    return 0;
                 }
 
             }
         } else {
             Help.printHelp(parameters);
+            return 0;
         }
     }
 }

@@ -17,8 +17,4 @@ public class Console {
     static void error(Object object) {
         System.err.println(object);
     }
-
-    static void exit(int exitCode) {
-        System.exit(exitCode);
-    }
 }
