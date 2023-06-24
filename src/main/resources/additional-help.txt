@@ -5,3 +5,10 @@ Details:
     Example:
       -o isValid 1.0.0
       -o isValid ABC
+
+  -o isStable version
+  --operation isStable version
+
+    Example:
+      -o isStable 1.0.0
+      -o isStable 0.1.0

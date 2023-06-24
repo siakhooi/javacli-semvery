@@ -1,0 +1,22 @@
+sing.app.semvery.SemveryisStableTest.testIsStable_bad=[
+not stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_good=[
+stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_invalid=[
+invalid
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_no_value=[
+Must specify a version.
+
+]

@@ -10,7 +10,7 @@ import sing.app.semvery.parameters.OperationParameterValidator;
 public class Parameters {
 
     @Parameter(order = 1, names = {"--operation", "-o"},
-            description = "Operation, value = [isValid]",
+            description = "Operation, value = [isValid, isStable]",
             validateWith = OperationParameterValidator.class)
     String operation;
     @Parameter(order = 98, names = {"--version", "-v"}, description = "Display version", help = true)

@@ -34,7 +34,26 @@ public class Semvery {
                     Console.println("valid");
                     return 0;
                 }
-
+            }
+        } else if ("isStable".equals(parameters.operation)) {
+            if (parameters.mainParameters.isEmpty()) {
+                Console.error("Must specify a version.");
+                return 2;
+            } else {
+                String value = parameters.mainParameters.get(0);
+                Semver version = Semver.parse(value);
+                if (version == null) {
+                    Console.println("invalid");
+                    return 1;
+                } else {
+                    if (version.isStable()) {
+                        Console.println("stable");
+                        return 0;
+                    } else {
+                        Console.println("not stable");
+                        return 1;
+                    }
+                }
             }
         } else {
             Help.printHelp(parameters);

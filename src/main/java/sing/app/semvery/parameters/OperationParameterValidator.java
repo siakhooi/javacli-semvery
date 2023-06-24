@@ -7,8 +7,8 @@ public class OperationParameterValidator implements IParameterValidator {
 
     @Override
     public void validate(String name, String value) throws ParameterException {
-        if (!"isValid".equals(value)) {
-            throw new ParameterException(String.format("Invalid value for operation, accept 'isValid'. (Found %s)", value));
+        if (!"isValid".equals(value) && !"isStable".equals(value)) {
+            throw new ParameterException(String.format("Invalid value for operation, accept 'isValid', 'isStable'. (Found %s)", value));
         }
     }
 }
