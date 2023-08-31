@@ -25,35 +25,39 @@ public class Semvery {
                 Console.error("Must specify a version.");
                 return 2;
             } else {
-                String value = parameters.mainParameters.get(0);
-                Semver version = Semver.parse(value);
-                if (version == null) {
-                    Console.println("invalid");
-                    return 1;
-                } else {
-                    Console.println("valid");
-                    return 0;
+                int returnValue = 0;
+                for (String value : parameters.mainParameters) {
+                    Semver version = Semver.parse(value);
+                    if (version == null) {
+                        Console.println("invalid");
+                        returnValue = 1;
+                    } else {
+                        Console.println("valid");
+                    }
                 }
+                return returnValue;
             }
         } else if ("isStable".equals(parameters.operation)) {
             if (parameters.mainParameters.isEmpty()) {
                 Console.error("Must specify a version.");
                 return 2;
             } else {
-                String value = parameters.mainParameters.get(0);
-                Semver version = Semver.parse(value);
-                if (version == null) {
-                    Console.println("invalid");
-                    return 1;
-                } else {
-                    if (version.isStable()) {
-                        Console.println("stable");
-                        return 0;
+                int returnValue = 0;
+                for (String value : parameters.mainParameters) {
+                    Semver version = Semver.parse(value);
+                    if (version == null) {
+                        Console.println("invalid");
+                        returnValue = 1;
                     } else {
-                        Console.println("not stable");
-                        return 1;
+                        if (version.isStable()) {
+                            Console.println("stable");
+                        } else {
+                            Console.println("not stable");
+                            returnValue = 1;
+                        }
                     }
                 }
+                return returnValue;
             }
         } else {
             Help.printHelp(parameters);

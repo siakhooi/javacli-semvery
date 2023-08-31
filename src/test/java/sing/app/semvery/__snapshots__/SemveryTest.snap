@@ -1,5 +1,5 @@
 sing.app.semvery.SemveryTest.callMainWithArguments=[
-semvery 0.3.0
+semvery 0.4.0
 Usage: semvery [options]
   Options:
     --operation, -o
@@ -10,25 +10,28 @@ Usage: semvery [options]
       Display help
 
 Details:
-  -o isValid version
-  --operation isValid version
+  -o isValid version [version...]
+  --operation isValid version [version...]
 
     Example:
       -o isValid 1.0.0
       -o isValid ABC
+      -o isValid 1.0.0 2.0.0
+      -o isValid 1.0.0 ABC
 
-  -o isStable version
-  --operation isStable version
+  -o isStable version [version...]
+  --operation isStable version [version...]
 
     Example:
       -o isStable 1.0.0
       -o isStable 0.1.0
+      -o isStable 1.0.0 0.1.0
 
 ]
 
 
 sing.app.semvery.SemveryTest.callMainWithHelp=[
-semvery 0.3.0
+semvery 0.4.0
 Usage: semvery [options]
   Options:
     --operation, -o
@@ -39,25 +42,28 @@ Usage: semvery [options]
       Display help
 
 Details:
-  -o isValid version
-  --operation isValid version
+  -o isValid version [version...]
+  --operation isValid version [version...]
 
     Example:
       -o isValid 1.0.0
       -o isValid ABC
+      -o isValid 1.0.0 2.0.0
+      -o isValid 1.0.0 ABC
 
-  -o isStable version
-  --operation isStable version
+  -o isStable version [version...]
+  --operation isStable version [version...]
 
     Example:
       -o isStable 1.0.0
       -o isStable 0.1.0
+      -o isStable 1.0.0 0.1.0
 
 ]
 
 
 sing.app.semvery.SemveryTest.callMainWithNoArguments=[
-semvery 0.3.0
+semvery 0.4.0
 Usage: semvery [options]
   Options:
     --operation, -o
@@ -68,24 +74,27 @@ Usage: semvery [options]
       Display help
 
 Details:
-  -o isValid version
-  --operation isValid version
+  -o isValid version [version...]
+  --operation isValid version [version...]
 
     Example:
       -o isValid 1.0.0
       -o isValid ABC
+      -o isValid 1.0.0 2.0.0
+      -o isValid 1.0.0 ABC
 
-  -o isStable version
-  --operation isStable version
+  -o isStable version [version...]
+  --operation isStable version [version...]
 
     Example:
       -o isStable 1.0.0
       -o isStable 0.1.0
+      -o isStable 1.0.0 0.1.0
 
 ]
 
 
 sing.app.semvery.SemveryTest.callMainWithVersion=[
-0.3.0
+0.4.0
 
 ]

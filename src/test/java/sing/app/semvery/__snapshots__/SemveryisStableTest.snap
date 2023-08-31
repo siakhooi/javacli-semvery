@@ -1,3 +1,102 @@
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[Good]=[
+stable
+stable
+stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[Invalid]=[
+invalid
+invalid
+invalid
+invalid
+invalid
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalid:1]=[
+invalid
+stable
+stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalid:2]=[
+stable
+invalid
+stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalid:3]=[
+stable
+stable
+invalid
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalidAndNotStable:7]=[
+not stable
+invalid
+stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalidAndNotStable:8]=[
+invalid
+not stable
+stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalidAndNotStable:9]=[
+stable
+invalid
+not stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixNotStable:4]=[
+not stable
+stable
+stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixNotStable:5]=[
+stable
+not stable
+stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixNotStable:6]=[
+stable
+stable
+not stable
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[NotStable]=[
+not stable
+not stable
+not stable
+not stable
+
+]
+
+
 sing.app.semvery.SemveryisStableTest.testIsStable_bad=[
 not stable
 

@@ -95,4 +95,52 @@ class SemveryisStableTest {
 
         return a.stream();
     }
+
+    @ParameterizedTest
+    @MethodSource
+    void testIsStable_MultiValues(String scenario, String operation, int status, String[] values)
+            throws Exception {
+        String text = tapSystemOut(() -> {
+            String arguments[] = new String[values.length + 2];
+            arguments[0] = operation;
+            arguments[1] = IS_STABLE;
+            for (int i = 0; i < values.length; i++)
+                arguments[i + 2] = values[i];
+            assertEquals(status, app.run(arguments));
+        });
+        assertDoesNotThrow(() -> expect.scenario(scenario).toMatchSnapshot(text));
+    }
+
+    private static Stream<Arguments> testIsStable_MultiValues() {
+        String[][] goodValues = {{"1.0.0", "3.0.0", "1.0.2"}};
+        String[][] invalidValues =
+                {{"1.0.A", "adfadfasjdfsd", "23423", "2423.2342342", "24234.234234."}};
+        String[][] notStableValues = {{"0.1.0", "1.2.3-4", "1.2.3-BETA", "33.5454.54353-pre"}};
+        String[][] mixInvalidValues = {{"1.0.A", "1.1.0", "3.0.0"}, {"1.0.0", "1.1.A", "3.0.0"},
+                {"1.0.0", "1.1.0", "3.0.A"}};
+        String[][] mixNotStableValues = {{"0.1.0", "1.1.0", "3.0.0"}, {"1.1.0", "0.1.0", "3.0.0"},
+                {"1.1.0", "3.0.0", "0.1.0"}};
+        String[][] mixInvalidAndNotStableValues = {{"0.1.0", "1.1.A", "3.0.0"},
+                {"1.1.A", "0.1.0", "3.0.0"}, {"1.1.0", "3.0.A", "0.1.0"}};
+        ArrayList<Arguments> a = new ArrayList<>();
+
+        for (String o : OPERATION) {
+            for (String[] v : goodValues)
+                a.add(Arguments.of("Good", o, 0, v));
+            for (String[] v : invalidValues)
+                a.add(Arguments.of("Invalid", o, 1, v));
+            for (String[] v : notStableValues)
+                a.add(Arguments.of("NotStable", o, 1, v));
+            int i = 0;
+            for (String[] v : mixInvalidValues)
+                a.add(Arguments.of("MixInvalid:" + (++i), o, 1, v));
+            for (String[] v : mixNotStableValues)
+                a.add(Arguments.of("MixNotStable:" + (++i), o, 1, v));
+            for (String[] v : mixInvalidAndNotStableValues)
+                a.add(Arguments.of("MixInvalidAndNotStable:" + (++i), o, 1, v));
+        }
+        return a.stream();
+    }
+
+
 }

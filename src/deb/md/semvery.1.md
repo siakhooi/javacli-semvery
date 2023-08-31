@@ -17,8 +17,8 @@ semver utils.\
 \ \ \ -v, --version\
 \ \ \ \ \ \ Print semvery version.\
 \ \
-\ \ \ -o, --operation operator value\
-\ \ \ \ \ \ Operation, valid operator is **isValid**
+\ \ \ -o, --operation operator value \[values...\]\
+\ \ \ \ \ \ Operation, valid operator is **isValid**, **isStable**
 
 # EXAMPLES
 
@@ -27,6 +27,11 @@ semver utils.\
 \ \
 \ \ \ semvery -o isValid ABC\
 \ \ \ \ \ \ invalid
+\ \
+\ \ \ semvery -o isValid 1.0.0 2.0.0\
+\ \ \ \ \ \ valid\
+\ \ \ \ \ \ valid\
+\ \
 
 # LICENSE
 MIT

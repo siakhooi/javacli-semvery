@@ -86,6 +86,9 @@ semvery -h
 semvery --help
 
 semvery -o isValid 1.0.1
-semvery --operation isValid 1.0.1
+semvery --operation isValid 1.0.1 2.0.2
+
+semvery -o isStable 1.0.1
+semvery --operation isStable 1.0.1 2.0.2
 
 ```
