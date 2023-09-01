@@ -32,7 +32,7 @@ class SemveryisStableTest {
     @ValueSource(strings = {"-o", "--operation"})
     void testIsStable_no_value(String operation) throws Exception {
         String error = tapSystemErr(() -> {
-            assertEquals(2, app.run(new String[] {operation, IS_STABLE}));
+            assertEquals(ReturnValue.WRONG_PARAMETER, app.run(new String[] {operation, IS_STABLE}));
         });
         assertDoesNotThrow(() -> expect.toMatchSnapshot(error));
     }
@@ -41,7 +41,7 @@ class SemveryisStableTest {
     @MethodSource
     void testIsStable_good(String operation, String value) throws Exception {
         String text = tapSystemOut(() -> {
-            assertEquals(0, app.run(new String[] {operation, IS_STABLE, value}));
+            assertEquals(ReturnValue.OK, app.run(new String[] {operation, IS_STABLE, value}));
         });
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
@@ -61,7 +61,7 @@ class SemveryisStableTest {
     @MethodSource
     void testIsStable_invalid(String operation, String value) throws Exception {
         String text = tapSystemOut(() -> {
-            assertEquals(1, app.run(new String[] {operation, IS_STABLE, value}));
+            assertEquals(ReturnValue.NOT_OK, app.run(new String[] {operation, IS_STABLE, value}));
         });
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
@@ -80,7 +80,7 @@ class SemveryisStableTest {
     @MethodSource
     void testIsStable_bad(String operation, String value) throws Exception {
         String text = tapSystemOut(() -> {
-            assertEquals(1, app.run(new String[] {operation, IS_STABLE, value}));
+            assertEquals(ReturnValue.NOT_OK, app.run(new String[] {operation, IS_STABLE, value}));
         });
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
@@ -98,7 +98,7 @@ class SemveryisStableTest {
 
     @ParameterizedTest
     @MethodSource
-    void testIsStable_MultiValues(String scenario, String operation, int status, String[] values)
+    void testIsStable_MultiValues(String scenario, String operation, ReturnValue status, String[] values)
             throws Exception {
         String text = tapSystemOut(() -> {
             String arguments[] = new String[values.length + 2];
@@ -126,18 +126,18 @@ class SemveryisStableTest {
 
         for (String o : OPERATION) {
             for (String[] v : goodValues)
-                a.add(Arguments.of("Good", o, 0, v));
+                a.add(Arguments.of("Good", o, ReturnValue.OK, v));
             for (String[] v : invalidValues)
-                a.add(Arguments.of("Invalid", o, 1, v));
+                a.add(Arguments.of("Invalid", o, ReturnValue.NOT_OK, v));
             for (String[] v : notStableValues)
-                a.add(Arguments.of("NotStable", o, 1, v));
+                a.add(Arguments.of("NotStable", o, ReturnValue.NOT_OK, v));
             int i = 0;
             for (String[] v : mixInvalidValues)
-                a.add(Arguments.of("MixInvalid:" + (++i), o, 1, v));
+                a.add(Arguments.of("MixInvalid:" + (++i), o, ReturnValue.NOT_OK, v));
             for (String[] v : mixNotStableValues)
-                a.add(Arguments.of("MixNotStable:" + (++i), o, 1, v));
+                a.add(Arguments.of("MixNotStable:" + (++i), o, ReturnValue.NOT_OK, v));
             for (String[] v : mixInvalidAndNotStableValues)
-                a.add(Arguments.of("MixInvalidAndNotStable:" + (++i), o, 1, v));
+                a.add(Arguments.of("MixInvalidAndNotStable:" + (++i), o, ReturnValue.NOT_OK, v));
         }
         return a.stream();
     }

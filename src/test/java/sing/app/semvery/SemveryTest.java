@@ -24,7 +24,7 @@ class SemveryTest {
     @Test
     void callMainWithNoArguments() throws Exception {
         String text = tapSystemOut(() -> {
-            assertEquals(0, app.run(new String[] {}));
+            assertEquals(ReturnValue.OK, app.run(new String[] {}));
         });
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
@@ -32,7 +32,7 @@ class SemveryTest {
     @Test
     void callMainWithArguments() throws Exception {
         String text = tapSystemOut(() -> {
-            assertEquals(0, app.run(new String[] {"ABC", "CDE"}));
+            assertEquals(ReturnValue.OK, app.run(new String[] {"ABC", "CDE"}));
         });
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
@@ -41,7 +41,7 @@ class SemveryTest {
     @ValueSource(strings = {"-h", "--help"})
     void callMainWithHelp(String argument1) throws Exception {
         String text = tapSystemOut(() -> {
-            assertEquals(0, app.run(new String[] {argument1}));
+            assertEquals(ReturnValue.OK, app.run(new String[] {argument1}));
         });
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
@@ -50,7 +50,7 @@ class SemveryTest {
     @ValueSource(strings = {"-v", "--version"})
     void callMainWithVersion(String argument1) throws Exception {
         String text = tapSystemOut(() -> {
-            assertEquals(0, app.run(new String[] {argument1}));
+            assertEquals(ReturnValue.OK, app.run(new String[] {argument1}));
         });
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }

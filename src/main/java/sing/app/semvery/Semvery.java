@@ -5,29 +5,29 @@ import java.io.IOException;
 public class Semvery {
     public static void main(String[] args) throws IOException {
         Semvery app = new Semvery();
-        System.exit(app.run(args));
+        System.exit(app.run(args).getCode());
     }
 
     Parameters parameters;
 
-    int run(String[] args) throws IOException {
+    ReturnValue run(String[] args) throws IOException {
         parameters = new Parameters();
         parameters.process(args);
         if (parameters.help) {
             Help.printHelp(parameters);
-            return 0;
+            return ReturnValue.OK;
         } else if (parameters.version) {
             Version.printVersion();
-            return 0;
+            return ReturnValue.OK;
         } else if (parameters.operation != null) {
             if (parameters.mainParameters.isEmpty()) {
                 Console.error("Must specify a version.");
-                return 2;
+                return ReturnValue.WRONG_PARAMETER;
             }
             return parameters.operation.getProcessor().process(parameters.mainParameters);
         } else {
             Help.printHelp(parameters);
-            return 0;
+            return ReturnValue.OK;
         }
     }
 }
