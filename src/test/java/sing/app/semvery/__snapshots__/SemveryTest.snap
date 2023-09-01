@@ -3,7 +3,7 @@ semvery 0.4.0
 Usage: semvery [options]
   Options:
     --operation, -o
-      Operation, value = [isValid, isStable]
+      Options: [isValid, isStable]
     --version, -v
       Display version
     --help, -h
@@ -35,7 +35,7 @@ semvery 0.4.0
 Usage: semvery [options]
   Options:
     --operation, -o
-      Operation, value = [isValid, isStable]
+      Options: [isValid, isStable]
     --version, -v
       Display version
     --help, -h
@@ -67,7 +67,7 @@ semvery 0.4.0
 Usage: semvery [options]
   Options:
     --operation, -o
-      Operation, value = [isValid, isStable]
+      Options: [isValid, isStable]
     --version, -v
       Display version
     --help, -h
