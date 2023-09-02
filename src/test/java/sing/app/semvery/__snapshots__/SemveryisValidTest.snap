@@ -121,6 +121,129 @@ Value                Result
 ]
 
 
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[Good]=[
+Value                Result              
+-----                -----               
+1.0.0                valid               
+3.0.0                valid               
+1.0.2                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[Invalid]=[
+Value                Result              
+-----                -----               
+1.0.A                invalid             
+adfadfasjdfsd        invalid             
+23423                invalid             
+2423.2342342         invalid             
+24234.234234.        invalid             
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixInvalid:1]=[
+Value                Result              
+-----                -----               
+1.0.A                invalid             
+1.1.0                valid               
+3.0.0                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixInvalid:2]=[
+Value                Result              
+-----                -----               
+1.0.0                valid               
+1.1.A                invalid             
+3.0.0                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixInvalid:3]=[
+Value                Result              
+-----                -----               
+1.0.0                valid               
+1.1.0                valid               
+3.0.A                invalid             
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixInvalidAndNotStable:7]=[
+Value                Result              
+-----                -----               
+0.1.0                valid               
+1.1.A                invalid             
+3.0.0                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixInvalidAndNotStable:8]=[
+Value                Result              
+-----                -----               
+1.1.A                invalid             
+0.1.0                valid               
+3.0.0                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixInvalidAndNotStable:9]=[
+Value                Result              
+-----                -----               
+1.1.0                valid               
+3.0.A                invalid             
+0.1.0                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixNotStable:4]=[
+Value                Result              
+-----                -----               
+0.1.0                valid               
+1.1.0                valid               
+3.0.0                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixNotStable:5]=[
+Value                Result              
+-----                -----               
+1.1.0                valid               
+0.1.0                valid               
+3.0.0                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[MixNotStable:6]=[
+Value                Result              
+-----                -----               
+1.1.0                valid               
+3.0.0                valid               
+0.1.0                valid               
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_MultiValues_any[NotStable]=[
+Value                Result              
+-----                -----               
+0.1.0                valid               
+1.2.3-4              valid               
+1.2.3-BETA           valid               
+33.5454.54353-pre    valid               
+
+]
+
+
 sing.app.semvery.SemveryisValidTest.testIsValid_bad[1.0.A]=[
 Value                Result              
 -----                -----               
@@ -186,6 +309,12 @@ Value                Result
 
 
 sing.app.semvery.SemveryisValidTest.testIsValid_no_value=[
+Must specify a version.
+
+]
+
+
+sing.app.semvery.SemveryisValidTest.testIsValid_no_value_any=[
 Must specify a version.
 
 ]

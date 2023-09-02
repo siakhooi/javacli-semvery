@@ -10,6 +10,9 @@ public class Parameters {
 
     @Parameter(order = 1, names = {"--operation", "-o"})
     Operation operation;
+    @Parameter(order = 2, names = {"--any"},
+            description = "Return success(status 0) if any of the values meet the operation criteria, instead of all values have to meet.")
+    boolean any;
     @Parameter(order = 98, names = {"--version", "-v"}, description = "Display version",
             help = true)
     boolean version;

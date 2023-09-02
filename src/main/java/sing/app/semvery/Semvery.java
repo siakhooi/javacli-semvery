@@ -27,7 +27,7 @@ public class Semvery {
             var result = parameters.operation.getProcessor().process(parameters.mainParameters);
             ResultPrinter.output(result);
 
-            return result.getReturnValue();
+            return result.getReturnValue(parameters.any);
         } else {
             Help.printHelp(parameters);
             return ReturnValue.OK;

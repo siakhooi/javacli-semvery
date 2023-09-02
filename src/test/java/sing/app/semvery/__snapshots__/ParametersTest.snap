@@ -3,6 +3,10 @@ Usage: semvery [options]
   Options:
     --operation, -o
       Options: [isValid, isStable]
+    --any
+      Return success(status 0) if any of the values meet the operation 
+      criteria, instead of all values have to meet.
+      Default: false
     --version, -v
       Display version
     --help, -h

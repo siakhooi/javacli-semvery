@@ -1,9 +1,13 @@
 sing.app.semvery.HelpTest.testPrintHelp=[
-semvery 0.5.0
+semvery 0.6.0
 Usage: semvery [options]
   Options:
     --operation, -o
       Options: [isValid, isStable]
+    --any
+      Return success(status 0) if any of the values meet the operation 
+      criteria, instead of all values have to meet.
+      Default: false
     --version, -v
       Display version
     --help, -h

@@ -1,22 +1,31 @@
 package sing.app.semvery;
 
 import java.util.ArrayList;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.List;
 
 public class OperationResult {
 
-  @Getter
-  @Setter
-  ReturnValue returnValue;
+  private int successCount = 0;
+  private int failCount = 0;
 
-  ArrayList<OperationResultEntry> resultEntries = new ArrayList<>();
+  private List<OperationResultEntry> resultEntries = new ArrayList<>();
 
-  public void addEntry(String value, String result) {
+  public void addEntry(String value, String result, boolean success) {
     resultEntries.add(new OperationResultEntry(value, result));
+    if (success)
+      successCount++;
+    else
+      failCount++;
   }
 
-  public ArrayList<OperationResultEntry> getResultEntries() {
+  public List<OperationResultEntry> getResultEntries() {
     return this.resultEntries;
+  }
+
+  public ReturnValue getReturnValue(boolean any) {
+    if (any)
+      return successCount > 0 ? ReturnValue.OK : ReturnValue.NOT_OK;
+    else
+      return failCount == 0 ? ReturnValue.OK : ReturnValue.NOT_OK;
   }
 }
