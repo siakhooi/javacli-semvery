@@ -9,7 +9,7 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 
 
 @ExtendWith({SnapshotExtension.class})
-public class HelpTest {
+class HelpTest {
   private Expect expect;
 
   @Test

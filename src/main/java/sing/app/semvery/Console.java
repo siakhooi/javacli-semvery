@@ -6,15 +6,15 @@ import lombok.NoArgsConstructor;
 @SuppressWarnings("java:S106")
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Console {
-    static public void printf(String format, Object... objects) {
+    public static void printf(String format, Object... objects) {
         System.out.printf(format, objects);
     }
 
-    static public void println(Object object) {
+    public static void println(Object object) {
         System.out.println(object);
     }
 
-    static public void error(Object object) {
+    public static void error(Object object) {
         System.err.println(object);
     }
 }
