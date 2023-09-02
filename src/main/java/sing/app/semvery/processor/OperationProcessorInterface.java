@@ -1,10 +1,10 @@
 package sing.app.semvery.processor;
 
 import java.util.List;
-import sing.app.semvery.ReturnValue;
+import sing.app.semvery.OperationResult;
 
 public interface OperationProcessorInterface {
 
-  ReturnValue process(List<String> versions);
+  OperationResult process(List<String> versions);
 
 }

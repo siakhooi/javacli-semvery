@@ -3,12 +3,13 @@ package sing.app.semvery.processor;
 import java.util.List;
 import org.semver4j.Semver;
 import sing.app.semvery.Console;
+import sing.app.semvery.OperationResult;
 import sing.app.semvery.ReturnValue;
 
 public class IsStableProcessor implements OperationProcessorInterface {
 
   @Override
-  public ReturnValue process(List<String> versions) {
+  public OperationResult process(List<String> versions) {
     ReturnValue returnValue = ReturnValue.OK;
     Console.printResult("Value", "Result");
     Console.printResult("-----", "-----");
@@ -27,7 +28,9 @@ public class IsStableProcessor implements OperationProcessorInterface {
         }
       }
     }
-    return returnValue;
+    OperationResult result = new OperationResult();
+    result.setReturnValue(returnValue);
+    return result;
   }
 
 }

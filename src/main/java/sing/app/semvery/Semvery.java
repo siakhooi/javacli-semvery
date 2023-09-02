@@ -24,7 +24,7 @@ public class Semvery {
                 Console.error("Must specify a version.");
                 return ReturnValue.WRONG_PARAMETER;
             }
-            return parameters.operation.getProcessor().process(parameters.mainParameters);
+            return parameters.operation.getProcessor().process(parameters.mainParameters).getReturnValue();
         } else {
             Help.printHelp(parameters);
             return ReturnValue.OK;
