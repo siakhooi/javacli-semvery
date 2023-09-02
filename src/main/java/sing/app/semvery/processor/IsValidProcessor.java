@@ -10,13 +10,16 @@ public class IsValidProcessor implements OperationProcessorInterface {
   @Override
   public ReturnValue process(List<String> versions) {
     ReturnValue returnValue = ReturnValue.OK;
+    Console.printResult("Value", "Result");
+    Console.printResult("-----", "-----");
+
     for (String value : versions) {
       Semver version = Semver.parse(value);
       if (version == null) {
-        Console.println("invalid");
+        Console.printResult(value, "invalid");
         returnValue = ReturnValue.NOT_OK;
       } else {
-        Console.println("valid");
+        Console.printResult(value, "valid");
       }
     }
     return returnValue;

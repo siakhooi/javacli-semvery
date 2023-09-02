@@ -43,7 +43,7 @@ class SemveryisValidTest {
         String text = tapSystemOut(() -> {
             assertEquals(ReturnValue.OK, app.run(new String[] {operation, IS_VALID, value}));
         });
-        assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
+        assertDoesNotThrow(() -> expect.scenario(value).toMatchSnapshot(text));
     }
 
     private static Stream<Arguments> testIsValid_good() {
@@ -64,7 +64,7 @@ class SemveryisValidTest {
         String text = tapSystemOut(() -> {
             assertEquals(ReturnValue.NOT_OK, app.run(new String[] {operation, IS_VALID, value}));
         });
-        assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
+        assertDoesNotThrow(() -> expect.scenario(value).toMatchSnapshot(text));
     }
 
     private static Stream<Arguments> testIsValid_bad() {

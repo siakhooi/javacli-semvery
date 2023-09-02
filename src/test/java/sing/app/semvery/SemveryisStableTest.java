@@ -43,7 +43,7 @@ class SemveryisStableTest {
         String text = tapSystemOut(() -> {
             assertEquals(ReturnValue.OK, app.run(new String[] {operation, IS_STABLE, value}));
         });
-        assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
+        assertDoesNotThrow(() -> expect.scenario(value).toMatchSnapshot(text));
     }
 
     private static Stream<Arguments> testIsStable_good() {
@@ -63,7 +63,7 @@ class SemveryisStableTest {
         String text = tapSystemOut(() -> {
             assertEquals(ReturnValue.NOT_OK, app.run(new String[] {operation, IS_STABLE, value}));
         });
-        assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
+        assertDoesNotThrow(() -> expect.scenario(value).toMatchSnapshot(text));
     }
 
     private static Stream<Arguments> testIsStable_invalid() {
@@ -82,7 +82,7 @@ class SemveryisStableTest {
         String text = tapSystemOut(() -> {
             assertEquals(ReturnValue.NOT_OK, app.run(new String[] {operation, IS_STABLE, value}));
         });
-        assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
+        assertDoesNotThrow(() -> expect.scenario(value).toMatchSnapshot(text));
     }
 
     private static Stream<Arguments> testIsStable_bad() {

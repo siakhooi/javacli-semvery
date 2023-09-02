@@ -1,116 +1,218 @@
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[Good]=[
-stable
-stable
-stable
+Value                Result              
+-----                -----               
+1.0.0                stable              
+3.0.0                stable              
+1.0.2                stable              
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[Invalid]=[
-invalid
-invalid
-invalid
-invalid
-invalid
+Value                Result              
+-----                -----               
+1.0.A                invalid             
+adfadfasjdfsd        invalid             
+23423                invalid             
+2423.2342342         invalid             
+24234.234234.        invalid             
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalid:1]=[
-invalid
-stable
-stable
+Value                Result              
+-----                -----               
+1.0.A                invalid             
+1.1.0                stable              
+3.0.0                stable              
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalid:2]=[
-stable
-invalid
-stable
+Value                Result              
+-----                -----               
+1.0.0                stable              
+1.1.A                invalid             
+3.0.0                stable              
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalid:3]=[
-stable
-stable
-invalid
+Value                Result              
+-----                -----               
+1.0.0                stable              
+1.1.0                stable              
+3.0.A                invalid             
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalidAndNotStable:7]=[
-not stable
-invalid
-stable
+Value                Result              
+-----                -----               
+0.1.0                not stable          
+1.1.A                invalid             
+3.0.0                stable              
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalidAndNotStable:8]=[
-invalid
-not stable
-stable
+Value                Result              
+-----                -----               
+1.1.A                invalid             
+0.1.0                not stable          
+3.0.0                stable              
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixInvalidAndNotStable:9]=[
-stable
-invalid
-not stable
+Value                Result              
+-----                -----               
+1.1.0                stable              
+3.0.A                invalid             
+0.1.0                not stable          
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixNotStable:4]=[
-not stable
-stable
-stable
+Value                Result              
+-----                -----               
+0.1.0                not stable          
+1.1.0                stable              
+3.0.0                stable              
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixNotStable:5]=[
-stable
-not stable
-stable
+Value                Result              
+-----                -----               
+1.1.0                stable              
+0.1.0                not stable          
+3.0.0                stable              
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[MixNotStable:6]=[
-stable
-stable
-not stable
+Value                Result              
+-----                -----               
+1.1.0                stable              
+3.0.0                stable              
+0.1.0                not stable          
 
 ]
 
 
 sing.app.semvery.SemveryisStableTest.testIsStable_MultiValues[NotStable]=[
-not stable
-not stable
-not stable
-not stable
+Value                Result              
+-----                -----               
+0.1.0                not stable          
+1.2.3-4              not stable          
+1.2.3-BETA           not stable          
+33.5454.54353-pre    not stable          
 
 ]
 
 
-sing.app.semvery.SemveryisStableTest.testIsStable_bad=[
-not stable
+sing.app.semvery.SemveryisStableTest.testIsStable_bad[0.1.0]=[
+Value                Result              
+-----                -----               
+0.1.0                not stable          
 
 ]
 
 
-sing.app.semvery.SemveryisStableTest.testIsStable_good=[
-stable
+sing.app.semvery.SemveryisStableTest.testIsStable_bad[1.2.3-4]=[
+Value                Result              
+-----                -----               
+1.2.3-4              not stable          
 
 ]
 
 
-sing.app.semvery.SemveryisStableTest.testIsStable_invalid=[
-invalid
+sing.app.semvery.SemveryisStableTest.testIsStable_bad[1.2.3-BETA]=[
+Value                Result              
+-----                -----               
+1.2.3-BETA           not stable          
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_bad[33.5454.54353-pre]=[
+Value                Result              
+-----                -----               
+33.5454.54353-pre    not stable          
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_good[1.0.0]=[
+Value                Result              
+-----                -----               
+1.0.0                stable              
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_good[1.2.3+sHa.0nSFGKjkjsdf]=[
+Value                Result              
+-----                -----               
+1.2.3+sHa.0nSFGKjkjsdf stable              
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_good[243434.2342343.23423423]=[
+Value                Result              
+-----                -----               
+243434.2342343.23423423 stable              
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_invalid[1.0.A]=[
+Value                Result              
+-----                -----               
+1.0.A                invalid             
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_invalid[23423]=[
+Value                Result              
+-----                -----               
+23423                invalid             
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_invalid[2423.2342342]=[
+Value                Result              
+-----                -----               
+2423.2342342         invalid             
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_invalid[24234.234234.]=[
+Value                Result              
+-----                -----               
+24234.234234.        invalid             
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable_invalid[adfadfasjdfsd]=[
+Value                Result              
+-----                -----               
+adfadfasjdfsd        invalid             
 
 ]
 

@@ -17,4 +17,8 @@ public class Console {
     public static void error(Object object) {
         System.err.println(object);
     }
+
+    public static void printResult(String value, String result){
+        printf("%-20s %-20s%n", value, result);
+    }
 }
