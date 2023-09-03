@@ -1,6 +1,9 @@
 package sing.app.semvery;
 
 public class ResultPrinter {
+
+  private ResultPrinter() {}
+
   public static void output(OperationResult operationResult) {
     Console.printResult("Value", "Result");
     Console.printResult("-----", "-----");
