@@ -1,9 +1,9 @@
 package sing.app.semvery;
 
-import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemErr;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static sing.app.semvery.TestData.createArguments;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,14 +11,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import au.com.origin.snapshots.Expect;
 import au.com.origin.snapshots.junit5.SnapshotExtension;
 
 @ExtendWith({SnapshotExtension.class})
 class SemveryisStableTest {
-    final static String[] OPERATION = {"-o", "--operation"};
-    final static String IS_STABLE = "isStable";
 
     private Semvery app;
     private Expect expect;
@@ -29,171 +26,52 @@ class SemveryisStableTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"-o", "--operation"})
-    void testIsStable_no_value(String operation) throws Exception {
-        String error = tapSystemErr(() -> {
-            assertEquals(ReturnValue.WRONG_PARAMETER, app.run(new String[] {operation, IS_STABLE}));
-        });
-        assertDoesNotThrow(() -> expect.toMatchSnapshot(error));
-    }
-    @ParameterizedTest
-    @ValueSource(strings = {"-o", "--operation"})
-    void testIsStable_no_value_any(String operation) throws Exception {
-        String error = tapSystemErr(() -> {
-            assertEquals(ReturnValue.WRONG_PARAMETER, app.run(new String[] {operation, IS_STABLE, "--any"}));
-        });
-        assertDoesNotThrow(() -> expect.toMatchSnapshot(error));
-    }
-
-    @ParameterizedTest
     @MethodSource
-    void testIsStable_good(String operation, String value) throws Exception {
-        String text = tapSystemOut(() -> {
-            assertEquals(ReturnValue.OK, app.run(new String[] {operation, IS_STABLE, value}));
-        });
-        assertDoesNotThrow(() -> expect.scenario(value).toMatchSnapshot(text));
-    }
-
-    private static Stream<Arguments> testIsStable_good() {
-        String[] value = {"1.0.0", "243434.2342343.23423423", "1.2.3+sHa.0nSFGKjkjsdf"};
-        ArrayList<Arguments> a = new ArrayList<>();
-
-        for (String o : OPERATION)
-            for (String v : value)
-                a.add(Arguments.of(o, v));
-
-        return a.stream();
-    }
-
-    @ParameterizedTest
-    @MethodSource
-    void testIsStable_invalid(String operation, String value) throws Exception {
-        String text = tapSystemOut(() -> {
-            assertEquals(ReturnValue.NOT_OK, app.run(new String[] {operation, IS_STABLE, value}));
-        });
-        assertDoesNotThrow(() -> expect.scenario(value).toMatchSnapshot(text));
-    }
-
-    private static Stream<Arguments> testIsStable_invalid() {
-        String[] value = {"1.0.A", "adfadfasjdfsd", "23423", "2423.2342342", "24234.234234."};
-        ArrayList<Arguments> a = new ArrayList<>();
-
-        for (String o : OPERATION)
-            for (String v : value)
-                a.add(Arguments.of(o, v));
-
-        return a.stream();
-    }
-    @ParameterizedTest
-    @MethodSource
-    void testIsStable_bad(String operation, String value) throws Exception {
-        String text = tapSystemOut(() -> {
-            assertEquals(ReturnValue.NOT_OK, app.run(new String[] {operation, IS_STABLE, value}));
-        });
-        assertDoesNotThrow(() -> expect.scenario(value).toMatchSnapshot(text));
-    }
-
-    private static Stream<Arguments> testIsStable_bad() {
-        String[] value = {"0.1.0", "1.2.3-4", "1.2.3-BETA", "33.5454.54353-pre"};
-        ArrayList<Arguments> a = new ArrayList<>();
-
-        for (String o : OPERATION)
-            for (String v : value)
-                a.add(Arguments.of(o, v));
-
-        return a.stream();
-    }
-
-    @ParameterizedTest
-    @MethodSource
-    void testIsStable_MultiValues(String scenario, String operation, ReturnValue status, String[] values)
+    void testIsStable(String scenario, ReturnValue returnValue, String[] arguments)
             throws Exception {
-        String text = tapSystemOut(() -> {
-            String arguments[] = new String[values.length + 2];
-            arguments[0] = operation;
-            arguments[1] = IS_STABLE;
-            for (int i = 0; i < values.length; i++)
-                arguments[i + 2] = values[i];
-            assertEquals(status, app.run(arguments));
-        });
+        String text = tapSystemOut(() -> assertEquals(returnValue, app.run(arguments)));
         assertDoesNotThrow(() -> expect.scenario(scenario).toMatchSnapshot(text));
     }
 
-    private static Stream<Arguments> testIsStable_MultiValues() {
-        String[][] goodValues = {{"1.0.0", "3.0.0", "1.0.2"}};
-        String[][] invalidValues =
-                {{"1.0.A", "adfadfasjdfsd", "23423", "2423.2342342", "24234.234234."}};
-        String[][] notStableValues = {{"0.1.0", "1.2.3-4", "1.2.3-BETA", "33.5454.54353-pre"}};
-        String[][] mixInvalidValues = {{"1.0.A", "1.1.0", "3.0.0"}, {"1.0.0", "1.1.A", "3.0.0"},
-                {"1.0.0", "1.1.0", "3.0.A"}};
-        String[][] mixNotStableValues = {{"0.1.0", "1.1.0", "3.0.0"}, {"1.1.0", "0.1.0", "3.0.0"},
-                {"1.1.0", "3.0.0", "0.1.0"}};
-        String[][] mixInvalidAndNotStableValues = {{"0.1.0", "1.1.A", "3.0.0"},
-                {"1.1.A", "0.1.0", "3.0.0"}, {"1.1.0", "3.0.A", "0.1.0"}};
+    private static Stream<Arguments> testIsStable() {
         ArrayList<Arguments> a = new ArrayList<>();
 
-        for (String o : OPERATION) {
-            for (String[] v : goodValues)
-                a.add(Arguments.of("Good", o, ReturnValue.OK, v));
-            for (String[] v : invalidValues)
-                a.add(Arguments.of("Invalid", o, ReturnValue.NOT_OK, v));
-            for (String[] v : notStableValues)
-                a.add(Arguments.of("NotStable", o, ReturnValue.NOT_OK, v));
-            int i = 0;
-            for (String[] v : mixInvalidValues)
-                a.add(Arguments.of("MixInvalid:" + (++i), o, ReturnValue.NOT_OK, v));
-            for (String[] v : mixNotStableValues)
-                a.add(Arguments.of("MixNotStable:" + (++i), o, ReturnValue.NOT_OK, v));
-            for (String[] v : mixInvalidAndNotStableValues)
-                a.add(Arguments.of("MixInvalidAndNotStable:" + (++i), o, ReturnValue.NOT_OK, v));
+        final ReturnValue ok = ReturnValue.OK;
+        final ReturnValue nok = ReturnValue.NOT_OK;
+        final String OPERATOR = "isStable";
+        final String[] ANY = new String[] {"--any"};
+        final String[] EMPTY = new String[] {};
+
+        for (String o : TestData.OPERATIONS) {
+            a.addAll(createArguments("all-stable", ok, o, OPERATOR, EMPTY, TestData.ALL_STABLE));
+            a.addAll(createArguments("all-stable", ok, o, OPERATOR, ANY, TestData.ALL_STABLE));
+
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, EMPTY,
+                    TestData.ALL_INVALID));
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_INVALID));
+
+            a.addAll(createArguments("all-not-stable", nok, o, OPERATOR, EMPTY,
+                    TestData.ALL_NOT_STABLE));
+            a.addAll(createArguments("all-not-stable", nok, o, OPERATOR, ANY,
+                    TestData.ALL_NOT_STABLE));
+
+
+            a.addAll(createArguments("mixed-stable-not-valid", nok, o, OPERATOR, EMPTY,
+                    TestData.STABLE_INVALID));
+            a.addAll(createArguments("mixed-stable-not-valid", ok, o, OPERATOR, ANY,
+                    TestData.STABLE_INVALID));
+
+            a.addAll(createArguments("mixed-stable-not-stable", nok, o, OPERATOR, EMPTY,
+                    TestData.STABLE_NOT_STABLE));
+            a.addAll(createArguments("mixed-stable-not-stable", ok, o, OPERATOR, ANY,
+                    TestData.STABLE_NOT_STABLE));
+
+            a.addAll(createArguments("mixed-stable-not-stable-not-valid", nok, o, OPERATOR, EMPTY,
+                    TestData.STABLE_NOT_STABLE_NOT_VALID));
+            a.addAll(createArguments("mixed-stable-not-stable-not-valid", ok, o, OPERATOR, ANY,
+                    TestData.STABLE_NOT_STABLE_NOT_VALID));
         }
-        return a.stream();
-    }
 
-    @ParameterizedTest
-    @MethodSource
-    void testIsStable_MultiValues_any(String scenario, String operation, ReturnValue status, String[] values)
-            throws Exception {
-        String text = tapSystemOut(() -> {
-            String arguments[] = new String[values.length + 3];
-            arguments[0] = operation;
-            arguments[1] = IS_STABLE;
-            arguments[2] = "--any";
-            for (int i = 0; i < values.length; i++)
-                arguments[i + 3] = values[i];
-            assertEquals(status, app.run(arguments));
-        });
-        assertDoesNotThrow(() -> expect.scenario(scenario).toMatchSnapshot(text));
-    }
-
-    private static Stream<Arguments> testIsStable_MultiValues_any() {
-        String[][] goodValues = {{"1.0.0", "3.0.0", "1.0.2"}};
-        String[][] invalidValues =
-                {{"1.0.A", "adfadfasjdfsd", "23423", "2423.2342342", "24234.234234."}};
-        String[][] notStableValues = {{"0.1.0", "1.2.3-4", "1.2.3-BETA", "33.5454.54353-pre"}};
-        String[][] mixInvalidValues = {{"1.0.A", "1.1.0", "3.0.0"}, {"1.0.0", "1.1.A", "3.0.0"},
-                {"1.0.0", "1.1.0", "3.0.A"}};
-        String[][] mixNotStableValues = {{"0.1.0", "1.1.0", "3.0.0"}, {"1.1.0", "0.1.0", "3.0.0"},
-                {"1.1.0", "3.0.0", "0.1.0"}};
-        String[][] mixInvalidAndNotStableValues = {{"0.1.0", "1.1.A", "3.0.0"},
-                {"1.1.A", "0.1.0", "3.0.0"}, {"1.1.0", "3.0.A", "0.1.0"}};
-        ArrayList<Arguments> a = new ArrayList<>();
-
-        for (String o : OPERATION) {
-            for (String[] v : goodValues)
-                a.add(Arguments.of("Good", o, ReturnValue.OK, v));
-            for (String[] v : invalidValues)
-                a.add(Arguments.of("Invalid", o, ReturnValue.NOT_OK, v));
-            for (String[] v : notStableValues)
-                a.add(Arguments.of("NotStable", o, ReturnValue.NOT_OK, v));
-            int i = 0;
-            for (String[] v : mixInvalidValues)
-                a.add(Arguments.of("MixInvalid:" + (++i), o, ReturnValue.OK, v));
-            for (String[] v : mixNotStableValues)
-                a.add(Arguments.of("MixNotStable:" + (++i), o, ReturnValue.OK, v));
-            for (String[] v : mixInvalidAndNotStableValues)
-                a.add(Arguments.of("MixInvalidAndNotStable:" + (++i), o, ReturnValue.OK, v));
-        }
         return a.stream();
     }
 }
