@@ -15,7 +15,7 @@ import au.com.origin.snapshots.Expect;
 import au.com.origin.snapshots.junit5.SnapshotExtension;
 
 @ExtendWith({SnapshotExtension.class})
-public class SemveryNoValuesTest {
+class SemveryNoValuesTest {
   private Semvery app;
   private Expect expect;
 
