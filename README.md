@@ -91,4 +91,19 @@ semvery --operation isValid 1.0.1 2.0.2
 semvery -o isStable 1.0.1
 semvery --operation isStable 1.0.1 2.0.2
 
+semvery -o isGreater -r 1.0.0 1.0.1
+semvery --operation isGreater -r 1.0.0 1.0.1 2.0.2
+
 ```
+
+## Files to update for version update
+
+- `pom.xml`
+- `src/deb/DEBIAN/control`
+- `src/deb/usr/bin/semvery`
+- `src/main/java/sing/app/semvery/Version.java`
+- Test files
+  - `src/test/java/sing/app/semvery/VersionTest.java`
+  - `src/test/java/sing/app/semvery/__snapshots__/HelpTest.snap`
+  - `src/test/java/sing/app/semvery/__snapshots__/SemveryTest.snap`
+  - `src/test/java/sing/app/semvery/__snapshots__/VersionTest.snap`
