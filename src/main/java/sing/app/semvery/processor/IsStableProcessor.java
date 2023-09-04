@@ -7,11 +7,6 @@ import sing.app.semvery.OperationResult;
 public class IsStableProcessor implements OperationProcessorInterface {
 
   @Override
-  public boolean requireRefVersion() {
-    return false;
-  }
-
-  @Override
   public OperationResult process(List<String> versions, String refVersion) {
     OperationResult result = new OperationResult();
 

@@ -7,11 +7,6 @@ import sing.app.semvery.OperationResult;
 public class IsGreaterProcessor implements OperationProcessorInterface {
 
   @Override
-  public boolean requireRefVersion() {
-    return true;
-  }
-
-  @Override
   public OperationResult process(List<String> versions, String refVersion) {
     OperationResult result = new OperationResult();
 

@@ -7,6 +7,4 @@ public interface OperationProcessorInterface {
 
   OperationResult process(List<String> versions, String refVersion);
 
-  boolean requireRefVersion();
-
 }

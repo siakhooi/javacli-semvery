@@ -24,12 +24,11 @@ public class Semvery {
                 Console.error("Must specify a version.");
                 return ReturnValue.WRONG_PARAMETER;
             }
-            var processor = parameters.operation.getProcessor();
-            if (processor.requireRefVersion() && parameters.refVersion == null) {
+            if (parameters.operation.requireRefVersion() && parameters.refVersion == null) {
                 Console.error("Must specify a refVersion.");
                 return ReturnValue.WRONG_PARAMETER;
             }
-            var result = processor.process(parameters.mainParameters, parameters.refVersion);
+            var result = parameters.operation.getProcessor().process(parameters.mainParameters, parameters.refVersion);
             ResultPrinter.output(result);
 
             return result.getReturnValue(parameters.any);
