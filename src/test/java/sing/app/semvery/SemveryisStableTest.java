@@ -55,21 +55,23 @@ class SemveryisStableTest {
             a.addAll(createArguments("all-not-stable", nok, o, OPERATOR, ANY,
                     TestData.ALL_NOT_STABLE));
 
-
-            a.addAll(createArguments("mixed-stable-not-valid", nok, o, OPERATOR, EMPTY,
-                    TestData.STABLE_INVALID));
-            a.addAll(createArguments("mixed-stable-not-valid", ok, o, OPERATOR, ANY,
-                    TestData.STABLE_INVALID));
-
             a.addAll(createArguments("mixed-stable-not-stable", nok, o, OPERATOR, EMPTY,
                     TestData.STABLE_NOT_STABLE));
             a.addAll(createArguments("mixed-stable-not-stable", ok, o, OPERATOR, ANY,
                     TestData.STABLE_NOT_STABLE));
+            a.addAll(createArguments("mixed-stable-not-valid", nok, o, OPERATOR, EMPTY,
+                    TestData.STABLE_INVALID));
+            a.addAll(createArguments("mixed-stable-not-valid", ok, o, OPERATOR, ANY,
+                    TestData.STABLE_INVALID));
+            a.addAll(createArguments("mixed-not-stable-not-valid", nok, o, OPERATOR, EMPTY,
+                    TestData.NOT_STABLE_INVALID));
+            a.addAll(createArguments("mixed-not-stable-not-valid", nok, o, OPERATOR, ANY,
+                    TestData.NOT_STABLE_INVALID));
 
             a.addAll(createArguments("mixed-stable-not-stable-not-valid", nok, o, OPERATOR, EMPTY,
-                    TestData.STABLE_NOT_STABLE_NOT_VALID));
+                    TestData.STABLE_NOT_STABLE_INVALID));
             a.addAll(createArguments("mixed-stable-not-stable-not-valid", ok, o, OPERATOR, ANY,
-                    TestData.STABLE_NOT_STABLE_NOT_VALID));
+                    TestData.STABLE_NOT_STABLE_INVALID));
         }
 
         return a.stream();

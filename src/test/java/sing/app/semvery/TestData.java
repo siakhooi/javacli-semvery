@@ -30,8 +30,10 @@ public class TestData {
             {{"1.0.A", "1.1.0", "1.3.0"}, {"1.3.0", "1.1.A", "1.3.0"}, {"1.0.0", "1.1.0", "3.0.A"}};
     public static final String[][] STABLE_NOT_STABLE =
             {{"0.1.0", "1.1.0", "3.0.0"}, {"1.1.0", "0.1.0", "3.0.0"}, {"1.1.0", "3.0.0", "0.1.0"}};
-    public static final String[][] STABLE_NOT_STABLE_NOT_VALID =
+    public static final String[][] STABLE_NOT_STABLE_INVALID =
             {{"0.1.0", "1.1.A", "3.0.0"}, {"1.1.A", "0.1.0", "3.0.0"}, {"1.1.0", "3.0.A", "0.1.0"}};
+    public static final String[][] NOT_STABLE_INVALID =
+            {{"0.1.0", "1.1.A", "3.0.0-BETA"}, {"1.1.A", "0.1.0", "3.B.0"}, {"1.1.0-pre", "3.0.A", "5.1.0-4"}};
 
     public static final String[][] ALL_GREATER_2_0_0 =
             {{"2.0.1"}, {"2.1.0"}, {"3.1.2"}, {"2.0.3", "4.5.7", "8.7.8"}};

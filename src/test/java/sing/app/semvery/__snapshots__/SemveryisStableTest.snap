@@ -127,6 +127,36 @@ Value                Result
 ]
 
 
+sing.app.semvery.SemveryisStableTest.testIsStable[mixed-not-stable-not-valid:0.1.0,1.1.A,3.0.0-BETA]=[
+Value                Result              
+-----                -----               
+0.1.0                not stable          
+1.1.A                invalid             
+3.0.0-BETA           not stable          
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable[mixed-not-stable-not-valid:1.1.0-pre,3.0.A,5.1.0-4]=[
+Value                Result              
+-----                -----               
+1.1.0-pre            not stable          
+3.0.A                invalid             
+5.1.0-4              not stable          
+
+]
+
+
+sing.app.semvery.SemveryisStableTest.testIsStable[mixed-not-stable-not-valid:1.1.A,0.1.0,3.B.0]=[
+Value                Result              
+-----                -----               
+1.1.A                invalid             
+0.1.0                not stable          
+3.B.0                invalid             
+
+]
+
+
 sing.app.semvery.SemveryisStableTest.testIsStable[mixed-stable-not-stable-not-valid:0.1.0,1.1.A,3.0.0]=[
 Value                Result              
 -----                -----               
