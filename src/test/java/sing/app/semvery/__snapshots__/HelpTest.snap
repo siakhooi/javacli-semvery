@@ -1,9 +1,11 @@
 sing.app.semvery.HelpTest.testPrintHelp=[
-semvery 0.6.0
+semvery 0.7.0
 Usage: semvery [options]
   Options:
     --operation, -o
-      Options: [isValid, isStable]
+      Options: [isValid, isStable, isGreater]
+    --ref, -r
+      Reference Value for isGreater
     --any
       Return success(status 0) if any of the values meet the operation 
       criteria, instead of all values have to meet.
@@ -30,5 +32,13 @@ Details:
       -o isStable 1.0.0
       -o isStable 0.1.0
       -o isStable 1.0.0 0.1.0
+
+  -o isGreater -r refVersion version [version...]
+  --operation isGreater -r refVersion version [version...]
+
+    Example:
+      -o isGreater -r 0.5.0 1.0.0
+      -o isGreater -r 0.5.0 0.1.0
+      -o isGreater -r 0.5.0 1.0.0 0.1.0
 
 ]

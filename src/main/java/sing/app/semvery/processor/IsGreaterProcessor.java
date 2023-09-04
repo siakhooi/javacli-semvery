@@ -4,11 +4,11 @@ import java.util.List;
 import org.semver4j.Semver;
 import sing.app.semvery.OperationResult;
 
-public class IsValidProcessor implements OperationProcessorInterface {
+public class IsGreaterProcessor implements OperationProcessorInterface {
 
   @Override
   public boolean requireRefVersion() {
-    return false;
+    return true;
   }
 
   @Override
@@ -19,8 +19,12 @@ public class IsValidProcessor implements OperationProcessorInterface {
       Semver version = Semver.parse(value);
       if (version == null)
         result.addEntry(value, "invalid", false);
-      else
-        result.addEntry(value, "valid", true);
+      else {
+        if (version.isGreaterThan(refVersion))
+          result.addEntry(value, "greater", true);
+        else
+          result.addEntry(value, "not greater", false);
+      }
     }
     return result;
   }

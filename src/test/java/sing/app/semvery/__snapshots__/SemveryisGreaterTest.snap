@@ -1,0 +1,238 @@
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-greater-2.0.0:2.0.1]=[
+Value                Result              
+-----                -----               
+2.0.1                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-greater-2.0.0:2.0.3,4.5.7,8.7.8]=[
+Value                Result              
+-----                -----               
+2.0.3                greater             
+4.5.7                greater             
+8.7.8                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-greater-2.0.0:2.1.0]=[
+Value                Result              
+-----                -----               
+2.1.0                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-greater-2.0.0:3.1.2]=[
+Value                Result              
+-----                -----               
+3.1.2                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-greater-2.0.0:0.1.2]=[
+Value                Result              
+-----                -----               
+0.1.2                not greater         
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-greater-2.0.0:1.0.2]=[
+Value                Result              
+-----                -----               
+1.0.2                not greater         
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-greater-2.0.0:1.0.3,0.5.7,2.0.0]=[
+Value                Result              
+-----                -----               
+1.0.3                not greater         
+0.5.7                not greater         
+2.0.0                not greater         
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-greater-2.0.0:2.0.0]=[
+Value                Result              
+-----                -----               
+2.0.0                not greater         
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-valid:1.0.A]=[
+Value                Result              
+-----                -----               
+1.0.A                invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-valid:1.0.B,adfadfasjdfsd,23423,2423.2342342,24234.234234.]=[
+Value                Result              
+-----                -----               
+1.0.B                invalid             
+adfadfasjdfsd        invalid             
+23423                invalid             
+2423.2342342         invalid             
+24234.234234.        invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-valid:23423]=[
+Value                Result              
+-----                -----               
+23423                invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-valid:2423.2342342]=[
+Value                Result              
+-----                -----               
+2423.2342342         invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-valid:24234.234234.]=[
+Value                Result              
+-----                -----               
+24234.234234.        invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[all-not-valid:adfadfasjdfsd]=[
+Value                Result              
+-----                -----               
+adfadfasjdfsd        invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-2.0.0-not-valid:1.0.A,2.1.0,3.3.0]=[
+Value                Result              
+-----                -----               
+1.0.A                invalid             
+2.1.0                greater             
+3.3.0                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-2.0.0-not-valid:2.0.0,3.1.0,3.0.A]=[
+Value                Result              
+-----                -----               
+2.0.0                not greater         
+3.1.0                greater             
+3.0.A                invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-2.0.0-not-valid:2.3.0,1.1.A,3.3.0]=[
+Value                Result              
+-----                -----               
+2.3.0                greater             
+1.1.A                invalid             
+3.3.0                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-not-greater-2.0.0-not-valid:0.1.A,1.1.0,3.0.0]=[
+Value                Result              
+-----                -----               
+0.1.A                invalid             
+1.1.0                not greater         
+3.0.0                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-not-greater-2.0.0-not-valid:1.1.0,3.0.2,A.1.0]=[
+Value                Result              
+-----                -----               
+1.1.0                not greater         
+3.0.2                greater             
+A.1.0                invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-not-greater-2.0.0-not-valid:1.1.A,0.1.2,3.0.0]=[
+Value                Result              
+-----                -----               
+1.1.A                invalid             
+0.1.2                not greater         
+3.0.0                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-not-greater-2.0.0:0.1.1,1.1.0,3.0.0]=[
+Value                Result              
+-----                -----               
+0.1.1                not greater         
+1.1.0                not greater         
+3.0.0                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-not-greater-2.0.0:1.1.0,0.1.2,3.0.0]=[
+Value                Result              
+-----                -----               
+1.1.0                not greater         
+0.1.2                not greater         
+3.0.0                greater             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-greater-not-greater-2.0.0:1.1.0,3.0.2,0.1.0]=[
+Value                Result              
+-----                -----               
+1.1.0                not greater         
+3.0.2                greater             
+0.1.0                not greater         
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-not-greater-2.0.0-not-valid:1.0.0,1.1.0,3.0.A]=[
+Value                Result              
+-----                -----               
+1.0.0                not greater         
+1.1.0                not greater         
+3.0.A                invalid             
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-not-greater-2.0.0-not-valid:1.0.A,1.1.0,1.3.0]=[
+Value                Result              
+-----                -----               
+1.0.A                invalid             
+1.1.0                not greater         
+1.3.0                not greater         
+
+]
+
+
+sing.app.semvery.SemveryisGreaterTest.testIsGreater[mixed-not-greater-2.0.0-not-valid:1.3.0,1.1.A,1.3.0]=[
+Value                Result              
+-----                -----               
+1.3.0                not greater         
+1.1.A                invalid             
+1.3.0                not greater         
+
+]

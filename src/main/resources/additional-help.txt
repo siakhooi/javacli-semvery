@@ -15,3 +15,11 @@ Details:
       -o isStable 1.0.0
       -o isStable 0.1.0
       -o isStable 1.0.0 0.1.0
+
+  -o isGreater -r refVersion version [version...]
+  --operation isGreater -r refVersion version [version...]
+
+    Example:
+      -o isGreater -r 0.5.0 1.0.0
+      -o isGreater -r 0.5.0 0.1.0
+      -o isGreater -r 0.5.0 1.0.0 0.1.0
