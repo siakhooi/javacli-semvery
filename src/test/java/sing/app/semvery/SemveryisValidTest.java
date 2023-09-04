@@ -47,13 +47,13 @@ class SemveryisValidTest {
             a.addAll(createArguments("all-valid", ok, o, OPERATOR, ANY, TestData.ALL_VALID));
 
             a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, EMPTY,
-                    TestData.ALL_INVALID));
-            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_INVALID));
+                    TestData.ALL_NOT_VALID));
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_NOT_VALID));
 
             a.addAll(createArguments("mixed-valid-not-valid", nok, o, OPERATOR, EMPTY,
-                    TestData.VALID_INVALID));
+                    TestData.VALID_NOT_VALID));
             a.addAll(createArguments("mixed-valid-not-valid", ok, o, OPERATOR, ANY,
-                    TestData.VALID_INVALID));
+                    TestData.VALID_NOT_VALID));
         }
 
         return a.stream();

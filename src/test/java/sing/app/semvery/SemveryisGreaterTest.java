@@ -54,8 +54,8 @@ class SemveryisGreaterTest {
                     TestData.ALL_NOT_GREATER_2_0_0));
 
             a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, DEFAULT,
-                    TestData.ALL_INVALID));
-            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_INVALID));
+                    TestData.ALL_NOT_VALID));
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_NOT_VALID));
 
             a.addAll(createArguments("mixed-greater-not-greater-2.0.0", nok, o, OPERATOR, DEFAULT,
                     TestData.GREATER_NOT_GREATER_2_0_0));
@@ -63,19 +63,19 @@ class SemveryisGreaterTest {
                     TestData.GREATER_NOT_GREATER_2_0_0));
 
             a.addAll(createArguments("mixed-greater-2.0.0-not-valid", nok, o, OPERATOR, DEFAULT,
-                    TestData.GREATER_2_0_0_INVALID));
+                    TestData.GREATER_2_0_0_NOT_VALID));
             a.addAll(createArguments("mixed-greater-2.0.0-not-valid", ok, o, OPERATOR, ANY,
-                    TestData.GREATER_2_0_0_INVALID));
+                    TestData.GREATER_2_0_0_NOT_VALID));
 
             a.addAll(createArguments("mixed-not-greater-2.0.0-not-valid", nok, o, OPERATOR, DEFAULT,
-                    TestData.NOT_GREATER_2_0_0_INVALID));
+                    TestData.NOT_GREATER_2_0_0_NOT_VALID));
             a.addAll(createArguments("mixed-not-greater-2.0.0-not-valid", nok, o, OPERATOR, ANY,
-                    TestData.NOT_GREATER_2_0_0_INVALID));
+                    TestData.NOT_GREATER_2_0_0_NOT_VALID));
 
             a.addAll(createArguments("mixed-greater-not-greater-2.0.0-not-valid", nok, o, OPERATOR, DEFAULT,
-                    TestData.GREATER_NOT_GREATER_2_0_0_INVALID));
+                    TestData.GREATER_NOT_GREATER_2_0_0_NOT_VALID));
             a.addAll(createArguments("mixed-greater-not-greater-2.0.0-not-valid", ok, o, OPERATOR, ANY,
-                    TestData.GREATER_NOT_GREATER_2_0_0_INVALID));
+                    TestData.GREATER_NOT_GREATER_2_0_0_NOT_VALID));
         }
 
         return a.stream();

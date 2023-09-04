@@ -47,8 +47,8 @@ class SemveryisStableTest {
             a.addAll(createArguments("all-stable", ok, o, OPERATOR, ANY, TestData.ALL_STABLE));
 
             a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, EMPTY,
-                    TestData.ALL_INVALID));
-            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_INVALID));
+                    TestData.ALL_NOT_VALID));
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_NOT_VALID));
 
             a.addAll(createArguments("all-not-stable", nok, o, OPERATOR, EMPTY,
                     TestData.ALL_NOT_STABLE));
@@ -60,18 +60,18 @@ class SemveryisStableTest {
             a.addAll(createArguments("mixed-stable-not-stable", ok, o, OPERATOR, ANY,
                     TestData.STABLE_NOT_STABLE));
             a.addAll(createArguments("mixed-stable-not-valid", nok, o, OPERATOR, EMPTY,
-                    TestData.STABLE_INVALID));
+                    TestData.STABLE_NOT_VALID));
             a.addAll(createArguments("mixed-stable-not-valid", ok, o, OPERATOR, ANY,
-                    TestData.STABLE_INVALID));
+                    TestData.STABLE_NOT_VALID));
             a.addAll(createArguments("mixed-not-stable-not-valid", nok, o, OPERATOR, EMPTY,
-                    TestData.NOT_STABLE_INVALID));
+                    TestData.NOT_STABLE_NOT_VALID));
             a.addAll(createArguments("mixed-not-stable-not-valid", nok, o, OPERATOR, ANY,
-                    TestData.NOT_STABLE_INVALID));
+                    TestData.NOT_STABLE_NOT_VALID));
 
             a.addAll(createArguments("mixed-stable-not-stable-not-valid", nok, o, OPERATOR, EMPTY,
-                    TestData.STABLE_NOT_STABLE_INVALID));
+                    TestData.STABLE_NOT_STABLE_NOT_VALID));
             a.addAll(createArguments("mixed-stable-not-stable-not-valid", ok, o, OPERATOR, ANY,
-                    TestData.STABLE_NOT_STABLE_INVALID));
+                    TestData.STABLE_NOT_STABLE_NOT_VALID));
         }
 
         return a.stream();
