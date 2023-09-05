@@ -1,29 +1,30 @@
 package sing.app.semvery;
 
 import sing.app.semvery.processor.IsGreaterProcessor;
+import sing.app.semvery.processor.IsLowerProcessor;
 import sing.app.semvery.processor.IsStableProcessor;
 import sing.app.semvery.processor.IsValidProcessor;
 import sing.app.semvery.processor.OperationProcessorInterface;
 
 @SuppressWarnings({"java:S115"})
 public enum Operation {
-  isValid(new IsValidProcessor(), false), isStable(new IsStableProcessor(),
-      false), isGreater(new IsGreaterProcessor(), true);
+    isValid(new IsValidProcessor(), false), isStable(new IsStableProcessor(), false), isGreater(
+            new IsGreaterProcessor(), true), isLower(new IsLowerProcessor(), true);
 
-  private OperationProcessorInterface processor;
+    private OperationProcessorInterface processor;
 
-  private boolean requireRefVersion;
+    private boolean requireRefVersion;
 
-  Operation(OperationProcessorInterface processor, boolean requireRefVersion) {
-    this.processor = processor;
-    this.requireRefVersion = requireRefVersion;
-  }
+    Operation(OperationProcessorInterface processor, boolean requireRefVersion) {
+        this.processor = processor;
+        this.requireRefVersion = requireRefVersion;
+    }
 
-  public OperationProcessorInterface getProcessor() {
-    return this.processor;
-  }
+    public OperationProcessorInterface getProcessor() {
+        return this.processor;
+    }
 
-  public boolean requireRefVersion() {
-    return this.requireRefVersion;
-  }
+    public boolean requireRefVersion() {
+        return this.requireRefVersion;
+    }
 }

@@ -94,6 +94,9 @@ semvery --operation isStable 1.0.1 2.0.2
 semvery -o isGreater -r 1.0.0 1.0.1
 semvery --operation isGreater -r 1.0.0 1.0.1 2.0.2
 
+semvery -o isLower -r 1.0.0 1.0.1
+semvery --operation isLower -r 1.0.0 1.0.1 2.0.2
+
 ```
 
 ## Files to update for version update

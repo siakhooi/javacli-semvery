@@ -2,9 +2,9 @@ sing.app.semvery.ParametersTest.testPrintUsage=[
 Usage: semvery [options]
   Options:
     --operation, -o
-      Options: [isValid, isStable, isGreater]
+      Options: [isValid, isStable, isGreater, isLower]
     --ref, -r
-      Reference Value for isGreater
+      Reference Value for isGreater, isLower
     --any
       Return success(status 0) if any of the values meet the operation 
       criteria, instead of all values have to meet.

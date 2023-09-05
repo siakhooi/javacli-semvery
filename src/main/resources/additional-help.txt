@@ -23,3 +23,11 @@ Details:
       -o isGreater -r 0.5.0 1.0.0
       -o isGreater -r 0.5.0 0.1.0
       -o isGreater -r 0.5.0 1.0.0 0.1.0
+
+  -o isLower -r refVersion version [version...]
+  --operation isLower -r refVersion version [version...]
+
+    Example:
+      -o isLower -r 0.5.0 1.0.0
+      -o isLower -r 0.5.0 0.1.0
+      -o isLower -r 0.5.0 1.0.0 0.1.0

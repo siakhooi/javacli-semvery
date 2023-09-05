@@ -1,11 +1,11 @@
 sing.app.semvery.SemveryTest.callMainWithArguments=[
-semvery 0.7.1
+semvery 0.8.0
 Usage: semvery [options]
   Options:
     --operation, -o
-      Options: [isValid, isStable, isGreater]
+      Options: [isValid, isStable, isGreater, isLower]
     --ref, -r
-      Reference Value for isGreater
+      Reference Value for isGreater, isLower
     --any
       Return success(status 0) if any of the values meet the operation 
       criteria, instead of all values have to meet.
@@ -40,18 +40,26 @@ Details:
       -o isGreater -r 0.5.0 1.0.0
       -o isGreater -r 0.5.0 0.1.0
       -o isGreater -r 0.5.0 1.0.0 0.1.0
+
+  -o isLower -r refVersion version [version...]
+  --operation isLower -r refVersion version [version...]
+
+    Example:
+      -o isLower -r 0.5.0 1.0.0
+      -o isLower -r 0.5.0 0.1.0
+      -o isLower -r 0.5.0 1.0.0 0.1.0
 
 ]
 
 
 sing.app.semvery.SemveryTest.callMainWithHelp=[
-semvery 0.7.1
+semvery 0.8.0
 Usage: semvery [options]
   Options:
     --operation, -o
-      Options: [isValid, isStable, isGreater]
+      Options: [isValid, isStable, isGreater, isLower]
     --ref, -r
-      Reference Value for isGreater
+      Reference Value for isGreater, isLower
     --any
       Return success(status 0) if any of the values meet the operation 
       criteria, instead of all values have to meet.
@@ -86,18 +94,26 @@ Details:
       -o isGreater -r 0.5.0 1.0.0
       -o isGreater -r 0.5.0 0.1.0
       -o isGreater -r 0.5.0 1.0.0 0.1.0
+
+  -o isLower -r refVersion version [version...]
+  --operation isLower -r refVersion version [version...]
+
+    Example:
+      -o isLower -r 0.5.0 1.0.0
+      -o isLower -r 0.5.0 0.1.0
+      -o isLower -r 0.5.0 1.0.0 0.1.0
 
 ]
 
 
 sing.app.semvery.SemveryTest.callMainWithNoArguments=[
-semvery 0.7.1
+semvery 0.8.0
 Usage: semvery [options]
   Options:
     --operation, -o
-      Options: [isValid, isStable, isGreater]
+      Options: [isValid, isStable, isGreater, isLower]
     --ref, -r
-      Reference Value for isGreater
+      Reference Value for isGreater, isLower
     --any
       Return success(status 0) if any of the values meet the operation 
       criteria, instead of all values have to meet.
@@ -133,10 +149,18 @@ Details:
       -o isGreater -r 0.5.0 0.1.0
       -o isGreater -r 0.5.0 1.0.0 0.1.0
 
+  -o isLower -r refVersion version [version...]
+  --operation isLower -r refVersion version [version...]
+
+    Example:
+      -o isLower -r 0.5.0 1.0.0
+      -o isLower -r 0.5.0 0.1.0
+      -o isLower -r 0.5.0 1.0.0 0.1.0
+
 ]
 
 
 sing.app.semvery.SemveryTest.callMainWithVersion=[
-0.7.1
+0.8.0
 
 ]

@@ -10,8 +10,8 @@ public class TestData {
 
     public static final String[] OPERATIONS = new String[] {"-o", "--operation"};
 
-    public static final String[] ALL_OPERATORS = new String[] {"isValid", "isStable", "isGreater"};
-    public static final String[] OPERATORS_NEED_REFVERSION = new String[] {"isGreater"};
+    public static final String[] ALL_OPERATORS = new String[] {"isValid", "isStable", "isGreater", "isLower"};
+    public static final String[] OPERATORS_NEED_REFVERSION = new String[] {"isGreater", "isLower"};
 
     public static final String[][] ALL_VALID = {{"0.3.0"}, {"1.0.0"}, {"243434.234233.234223"},
             {"0.0.2"}, {"33.5454.54353-pre"}, {"1.0.1", "3.0.0", "0.0.2"}};
@@ -32,8 +32,8 @@ public class TestData {
             {{"0.1.0", "1.1.0", "3.0.0"}, {"1.1.0", "0.1.0", "3.0.0"}, {"1.1.0", "3.0.0", "0.1.0"}};
     public static final String[][] STABLE_NOT_STABLE_NOT_VALID =
             {{"0.1.0", "1.1.A", "3.0.0"}, {"1.1.A", "0.1.0", "3.0.0"}, {"1.1.0", "3.0.A", "0.1.0"}};
-    public static final String[][] NOT_STABLE_NOT_VALID =
-            {{"0.1.0", "1.1.A", "3.0.0-BETA"}, {"1.1.A", "0.1.0", "3.B.0"}, {"1.1.0-pre", "3.0.A", "5.1.0-4"}};
+    public static final String[][] NOT_STABLE_NOT_VALID = {{"0.1.0", "1.1.A", "3.0.0-BETA"},
+            {"1.1.A", "0.1.0", "3.B.0"}, {"1.1.0-pre", "3.0.A", "5.1.0-4"}};
 
     public static final String[][] ALL_GREATER_2_0_0 =
             {{"2.0.1"}, {"2.1.0"}, {"3.1.2"}, {"2.0.3", "4.5.7", "8.7.8"}};
@@ -46,10 +46,21 @@ public class TestData {
             {{"1.0.A", "2.1.0", "3.3.0"}, {"2.3.0", "1.1.A", "3.3.0"}, {"2.0.0", "3.1.0", "3.0.A"}};
     public static final String[][] NOT_GREATER_2_0_0_NOT_VALID =
             {{"1.0.A", "1.1.0", "1.3.0"}, {"1.3.0", "1.1.A", "1.3.0"}, {"1.0.0", "1.1.0", "3.0.A"}};
-
     public static final String[][] GREATER_NOT_GREATER_2_0_0_NOT_VALID =
             {{"0.1.A", "1.1.0", "3.0.0"}, {"1.1.A", "0.1.2", "3.0.0"}, {"1.1.0", "3.0.2", "A.1.0"}};
 
+    public static final String[][] ALL_LOWER_2_0_0 =
+            {{"1.0.1"}, {"1.1.0"}, {"1.1.2"}, {"1.0.3", "1.5.7", "0.7.8"}};
+    public static final String[][] ALL_NOT_LOWER_2_0_0 =
+            {{"2.0.2"}, {"2.0.1"}, {"2.1.2"}, {"2.0.3", "9.5.7", "2.0.1"}};
+    public static final String[][] LOWER_NOT_LOWER_2_0_0 = GREATER_NOT_GREATER_2_0_0;
+
+    public static final String[][] LOWER_2_0_0_NOT_VALID =
+            {{"1.0.A", "1.1.0", "0.3.0"}, {"0.3.0", "1.1.A", "1.3.1"}, {"1.0.0", "0.1.0", "3.0.A"}};
+    public static final String[][] NOT_LOWER_2_0_0_NOT_VALID =
+            {{"1.0.A", "2.1.0", "3.3.0"}, {"2.3.0", "1.1.A", "3.3.1"}, {"2.0.0", "4.1.0", "3.0.A"}};
+    public static final String[][] LOWER_NOT_LOWER_2_0_0_NOT_VALID =
+            GREATER_NOT_GREATER_2_0_0_NOT_VALID;
 
     private static Arguments createArgument(String scenario, ReturnValue returnValue,
             String operation, String operator, String[] values, String[] extra) {
