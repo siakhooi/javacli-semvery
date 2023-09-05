@@ -18,19 +18,22 @@ semver utils.\
 \ \ \ \ \ \ Print semvery version.\
 \ \
 \ \ \ -o, --operation operator value \[values...\]\
-\ \ \ \ \ \ Operation, valid operator is **isValid**, **isStable**
+\ \ \ \ \ \ Operation, valid operators are **isValid**, **isStable**, **isGreater**\
+\ \
+\ \ \ -r refValue\
+\ \ \ \ \ \ reference value, valid operator is **isGreater**
 
 # EXAMPLES
 
 \ \ \ semvery -o isValid 1.0.0\
-\ \ \ \ \ \ valid\
 \ \
 \ \ \ semvery -o isValid ABC\
-\ \ \ \ \ \ invalid
 \ \
 \ \ \ semvery -o isValid 1.0.0 2.0.0\
-\ \ \ \ \ \ valid\
-\ \ \ \ \ \ valid\
+\ \
+\ \ \ semvery -o isStable 1.0.0 2.0.0\
+\ \
+\ \ \ semvery -o isGreater -r 1.5.0 1.0.0 2.0.0\
 \ \
 
 # LICENSE

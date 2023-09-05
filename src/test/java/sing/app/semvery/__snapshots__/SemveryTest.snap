@@ -1,5 +1,5 @@
 sing.app.semvery.SemveryTest.callMainWithArguments=[
-semvery 0.7.0
+semvery 0.7.1
 Usage: semvery [options]
   Options:
     --operation, -o
@@ -45,7 +45,7 @@ Details:
 
 
 sing.app.semvery.SemveryTest.callMainWithHelp=[
-semvery 0.7.0
+semvery 0.7.1
 Usage: semvery [options]
   Options:
     --operation, -o
@@ -91,7 +91,7 @@ Details:
 
 
 sing.app.semvery.SemveryTest.callMainWithNoArguments=[
-semvery 0.7.0
+semvery 0.7.1
 Usage: semvery [options]
   Options:
     --operation, -o
@@ -137,6 +137,6 @@ Details:
 
 
 sing.app.semvery.SemveryTest.callMainWithVersion=[
-0.7.0
+0.7.1
 
 ]
