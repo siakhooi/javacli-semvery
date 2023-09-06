@@ -11,7 +11,7 @@ public class Parameters {
     @Parameter(order = 1, names = {"--operation", "-o"})
     Operation operation;
     @Parameter(order = 2, names = {"--ref", "-r"},
-            description = "Reference Value for isGreater, isLower")
+            description = "Reference Value for isGreater, isLower, isEqual")
     String refVersion;
     @Parameter(order = 3, names = {"--any"},
             description = "Return success(status 0) if any of the values meet the operation criteria, instead of all values have to meet.")

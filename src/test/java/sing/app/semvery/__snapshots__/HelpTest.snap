@@ -1,11 +1,11 @@
 sing.app.semvery.HelpTest.testPrintHelp=[
-semvery 0.8.0
+semvery 0.9.0
 Usage: semvery [options]
   Options:
     --operation, -o
-      Options: [isValid, isStable, isGreater, isLower]
+      Options: [isValid, isStable, isGreater, isLower, isEqual]
     --ref, -r
-      Reference Value for isGreater, isLower
+      Reference Value for isGreater, isLower, isEqual
     --any
       Return success(status 0) if any of the values meet the operation 
       criteria, instead of all values have to meet.
@@ -48,5 +48,13 @@ Details:
       -o isLower -r 0.5.0 1.0.0
       -o isLower -r 0.5.0 0.1.0
       -o isLower -r 0.5.0 1.0.0 0.1.0
+
+  -o isEqual -r refVersion version [version...]
+  --operation isEqual -r refVersion version [version...]
+
+    Example:
+      -o isEqual -r 0.5.0 1.0.0
+      -o isEqual -r 0.5.0 0.5.0
+      -o isEqual -r 0.5.0 1.0.0 0.5.0
 
 ]

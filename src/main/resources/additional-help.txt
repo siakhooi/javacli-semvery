@@ -31,3 +31,11 @@ Details:
       -o isLower -r 0.5.0 1.0.0
       -o isLower -r 0.5.0 0.1.0
       -o isLower -r 0.5.0 1.0.0 0.1.0
+
+  -o isEqual -r refVersion version [version...]
+  --operation isEqual -r refVersion version [version...]
+
+    Example:
+      -o isEqual -r 0.5.0 1.0.0
+      -o isEqual -r 0.5.0 0.5.0
+      -o isEqual -r 0.5.0 1.0.0 0.5.0

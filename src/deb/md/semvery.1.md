@@ -18,10 +18,10 @@ semver utils.\
 \ \ \ \ \ \ Print semvery version.\
 \ \
 \ \ \ -o, --operation operator value \[values...\]\
-\ \ \ \ \ \ Operation, valid operators are **isValid**, **isStable**, **isGreater**, **isLower**\
+\ \ \ \ \ \ Operation, valid operators are **isValid**, **isStable**, **isGreater**, **isLower**, **isEqual**\
 \ \
 \ \ \ -r refValue\
-\ \ \ \ \ \ reference value, valid operator is **isGreater**, **isLower**
+\ \ \ \ \ \ reference value, valid operator is **isGreater**, **isLower**, **isEqual**
 
 # EXAMPLES
 
@@ -36,6 +36,8 @@ semver utils.\
 \ \ \ semvery -o isGreater -r 1.5.0 1.0.0 2.0.0\
 \ \
 \ \ \ semvery -o isLower -r 1.5.0 1.0.0 2.0.0\
+\ \
+\ \ \ semvery -o , isEqual -r 1.5.0 1.5.0+3 2.0.0\
 \ \
 
 # LICENSE
