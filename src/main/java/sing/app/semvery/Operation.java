@@ -1,6 +1,7 @@
 package sing.app.semvery;
 
 import sing.app.semvery.processor.IsEqualProcessor;
+import sing.app.semvery.processor.IsEquivalentProcessor;
 import sing.app.semvery.processor.IsGreaterProcessor;
 import sing.app.semvery.processor.IsLowerProcessor;
 import sing.app.semvery.processor.IsStableProcessor;
@@ -11,7 +12,7 @@ import sing.app.semvery.processor.OperationProcessorInterface;
 public enum Operation {
     isValid(new IsValidProcessor(), false), isStable(new IsStableProcessor(), false), 
     isGreater(new IsGreaterProcessor(), true), isLower(new IsLowerProcessor(), true), 
-    isEqual(new IsEqualProcessor(), true);
+    isEqual(new IsEqualProcessor(), true), isEquivalent(new IsEquivalentProcessor(), true);
 
     private OperationProcessorInterface processor;
 

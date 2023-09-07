@@ -23,6 +23,15 @@ Value                Result
 ]
 
 
+sing.app.semvery.SemveryisEqualTest.testIsEqual[all-not-equal-2.0.0:2.0.0-33,2.0.0+33]=[
+Value                Result              
+-----                -----               
+2.0.0-33             not equal           
+2.0.0+33             not equal           
+
+]
+
+
 sing.app.semvery.SemveryisEqualTest.testIsEqual[all-not-equal-2.0.0:2.0.1]=[
 Value                Result              
 -----                -----               

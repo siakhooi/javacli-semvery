@@ -11,9 +11,9 @@ public class TestData {
     public static final String[] OPERATIONS = new String[] {"-o", "--operation"};
 
     public static final String[] ALL_OPERATORS =
-            new String[] {"isValid", "isStable", "isGreater", "isLower", "isEqual"};
+            new String[] {"isValid", "isStable", "isGreater", "isLower", "isEqual", "isEquivalent"};
     public static final String[] OPERATORS_NEED_REFVERSION =
-            new String[] {"isGreater", "isLower", "isEqual"};
+            new String[] {"isGreater", "isLower", "isEqual", "isEquivalent"};
 
     public static final String[][] ALL_VALID = {{"0.3.0"}, {"1.0.0"}, {"243434.234233.234223"},
             {"0.0.2"}, {"33.5454.54353-pre"}, {"1.0.1", "3.0.0", "0.0.2"}};
@@ -66,7 +66,7 @@ public class TestData {
 
     public static final String[][] ALL_EQUAL_2_0_0 = {{"2.0.0"}, {"2.0.0", "2.0.0"}};
     public static final String[][] ALL_NOT_EQUAL_2_0_0 =
-            {{"1.0.2"}, {"2.0.1"}, {"2.0.3", "9.5.7", "2.0.1"}};
+            {{"1.0.2"}, {"2.0.1"}, {"2.0.3", "9.5.7", "2.0.1"}, {"2.0.0-33", "2.0.0+33"}};
     public static final String[][] EQUAL_NOT_EQUAL_2_0_0 =
             {{"0.1.1", "2.0.0", "3.0.0"}, {"2.0.0", "3.0.0", "0.1.2"}, {"1.1.0", "0.0.2", "2.0.0"}};
 
@@ -76,6 +76,19 @@ public class TestData {
             {{"1.0.A", "2.1.0", "3.3.0"}, {"2.3.0", "1.1.A", "3.3.1"}, {"2.3.0", "4.1.0", "3.0.A"}};
     public static final String[][] EQUAL_NOT_EQUAL_2_0_0_NOT_VALID =
             {{"0.1.A", "1.1.0", "2.0.0"}, {"2.0.0", "1.1.A", "0.1.2"}, {"1.1.0", "2.0.0", "A.1.0"}};
+
+
+    public static final String[][] ALL_EQUIVALENT_2_0_0 = {{"2.0.0"}, {"2.0.0+3344"}, {"2.0.0", "2.0.0+3344"}};
+    public static final String[][] ALL_NOT_EQUIVALENT_2_0_0 =
+            {{"1.0.2"}, {"2.0.0-2434"}, {"2.0.3", "9.5.7", "2.0.0-2343"}};
+    public static final String[][] EQUIVALENT_NOT_EQUIVALENT_2_0_0 =
+            {{"2.0.0+23", "2.0.0", "3.0.0"}, {"2.0.0+33", "2.0.0-33", "2.0.0"}, {"1.1.0", "0.0.2", "2.0.0"}};
+    public static final String[][] EQUIVALENT_2_0_0_NOT_VALID =
+            {{"1.0.A", "2.0.0+33", "2.0.0"}, {"2.0.0+33", "1.1.A", "1.3.A"}, {"2.0.0", "0.1.B", "3.0.A"}};
+    public static final String[][] NOT_EQUIVALENT_2_0_0_NOT_VALID =
+            {{"1.0.A", "2.1.0", "3.3.0"}, {"2.3.0", "2.0.0-33", "3.3.1"}, {"2.3.0", "4.1.0", "3.0.A"}};
+    public static final String[][] EQUIVALENT_NOT_EQUIVALENT_2_0_0_NOT_VALID =
+            {{"0.1.A", "1.1.0", "2.0.0"}, {"2.0.0+33", "1.1.A", "0.1.2"}, {"2.0.0+33", "2.0.0-33", "A.1.0"}};
 
     private static Arguments createArgument(String scenario, ReturnValue returnValue,
             String operation, String operator, String[] values, String[] extra) {

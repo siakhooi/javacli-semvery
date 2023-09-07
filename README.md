@@ -100,6 +100,9 @@ semvery --operation isLower -r 1.0.0 1.0.1 2.0.2
 semvery -o isEqual -r 1.0.0 1.0.1
 semvery --operation isEqual -r 1.0.0 1.0.1 2.0.2
 
+semvery -o isEquivalent -r 1.0.0 1.0.1
+semvery --operation isEquivalent -r 1.0.0 1.0.1 2.0.2
+
 ```
 
 ## Files to update for version update

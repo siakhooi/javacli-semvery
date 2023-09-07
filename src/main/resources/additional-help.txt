@@ -39,3 +39,11 @@ Details:
       -o isEqual -r 0.5.0 1.0.0
       -o isEqual -r 0.5.0 0.5.0
       -o isEqual -r 0.5.0 1.0.0 0.5.0
+
+  -o isEquivalent -r refVersion version [version...]
+  --operation isEquivalent -r refVersion version [version...]
+
+    Example:
+      -o isEquivalent -r 0.5.0 1.0.0
+      -o isEquivalent -r 0.5.0 0.5.0
+      -o isEquivalent -r 0.5.0 1.0.0 0.5.0
