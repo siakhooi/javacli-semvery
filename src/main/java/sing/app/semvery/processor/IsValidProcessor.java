@@ -13,7 +13,7 @@ public class IsValidProcessor implements OperationProcessorInterface {
     for (String value : versions) {
       Semver version = Semver.parse(value);
       if (version == null)
-        result.addEntry(value, "invalid", false);
+        result.addEntry(value, "not valid", false);
       else
         result.addEntry(value, "valid", true);
     }
