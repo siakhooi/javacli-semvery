@@ -1,34 +1,36 @@
-#!/bin/sh
+#!/bin/bash
+
+readonly apt_repo_url="https://${PUBLISH_TO_APT_GITHUB_TOKEN}@github.com/siakhooi/apt.git"
+readonly apt_repo_branch=main
+readonly apt_repo_directory=apt
+readonly apt_repo_path=docs/pool/main/binary-amd64
+readonly git_commit_email=javacli-semvery@siakhooi.github.io
+readonly git_commit_user=javacli-semvery
+git_commit_message="javacli-semvery: Auto deploy [$(date)]"
+readonly git_commit_message
+
 set -e
 
-PATH_TO_FILE=$(ls ./*.deb)
-DEBIAN_PACKAGE_SOURCE_PATH=$(realpath $PATH_TO_FILE)
-DEBIAN_PACKAGE_FILE=$(basename $PATH_TO_FILE)
-
-TMPDIR=$(mktemp -d)
-
-TARGETPATH=docs/pool/main/binary-amd64
-TARGETURL=https://${PUBLISH_TO_APT_GITHUB_TOKEN}@github.com/siakhooi/apt.git
-TARGETBRANCH=main
-TARGETDIR=apt
-TARGET_GIT_EMAIL=javacli-semvery@siakhooi.github.io
-TARGET_GIT_USERNAME=javacli-semvery
-TARGET_COMMIT_MESSAGE="javacli-semvery: Auto deploy [$(date)]"
+debian_package_path=$(ls ./*.deb)
+debian_package_source_path=$(realpath "$debian_package_path")
+debian_package_filename=$(basename "$debian_package_path")
+target_debian_package_path=$apt_repo_path/$debian_package_filename
+working_directory=$(mktemp -d)
 
 (
-  cd $TMPDIR
-  git config --global user.email "$TARGET_GIT_EMAIL"
-  git config --global user.name "$TARGET_GIT_USERNAME"
+  cd "$working_directory"
+  git config --global user.email "$git_commit_email"
+  git config --global user.name "$git_commit_user"
 
-  git clone -n --depth=1 -b "$TARGETBRANCH" "$TARGETURL" "$TARGETDIR"
-  cd "$TARGETDIR"
-  git remote set-url origin "$TARGETURL"
+  git clone -n --depth=1 -b "$apt_repo_branch" "$apt_repo_url" "$apt_repo_directory"
+  cd "$apt_repo_directory"
+  git remote set-url origin "$apt_repo_url"
   git restore --staged .
-  mkdir -p $TARGETPATH
-  cp -v $DEBIAN_PACKAGE_SOURCE_PATH $TARGETPATH/$DEBIAN_PACKAGE_FILE
-  git add $TARGETPATH/$DEBIAN_PACKAGE_FILE
+  mkdir -p $apt_repo_path
+  cp -v "$debian_package_source_path" "$target_debian_package_path"
+  git add "$target_debian_package_path"
   git status
-  git commit -m "$TARGET_COMMIT_MESSAGE"
+  git commit -m "$git_commit_message"
   git push
 )
 find .

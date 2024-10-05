@@ -1,39 +1,40 @@
 #!/bin/bash
 
-TARGET=target/deb
-SOURCE=src/deb
-SOURCE_JAR=$(ls target/*-with-dependencies.jar)
+readonly source_directory=src/deb
+readonly target_directory=target/deb
+jar_file_path=$(ls target/*-with-dependencies.jar)
 
-mkdir -p $TARGET
+mkdir -p $target_directory
 
 # Control File
-cp -vr $SOURCE/DEBIAN $TARGET
+cp -vr $source_directory/DEBIAN $target_directory
 
 # Binary File
-cp -vr $SOURCE/usr $TARGET
-chmod 755 $TARGET/usr/bin/*
+cp -vr $source_directory/usr $target_directory
+chmod 755 $target_directory/usr/bin/*
 
 # Jar File
-mkdir -p $TARGET/usr/lib/java/siakhooi
-cp -v "$SOURCE_JAR" $TARGET/usr/lib/java/siakhooi
+mkdir -p $target_directory/usr/lib/java/siakhooi
+cp -v "$jar_file_path" $target_directory/usr/lib/java/siakhooi
 
 # Man Pages
-mkdir -p $TARGET/usr/share/man/man1/
-fileList=$(cd $SOURCE/md && find *.1.md | sed 's/.md//')
-for file in $fileList; do
-  pandoc $SOURCE/md/$file.md -s -t man | gzip -9 >$TARGET/usr/share/man/man1/$file.gz
+mkdir -p $target_directory/usr/share/man/man1/
+files=$(cd $source_directory/md && find ./*.1.md | sed 's/.md//')
+for file in $files; do
+  pandoc "$source_directory/md/$file.md" -s -t man |
+    gzip -9 >"$target_directory/usr/share/man/man1/$file.gz"
 done
 
-fakeroot dpkg-deb --build -Zxz $TARGET
-dpkg-name ${TARGET}.deb
+fakeroot dpkg-deb --build -Zxz $target_directory
+dpkg-name ${target_directory}.deb
 
-DEBFILE=$(ls ./target/*.deb)
+debian_file_path=$(ls ./target/*.deb)
 
-sha256sum "$DEBFILE" >$DEBFILE.sha256sum
-sha512sum "$DEBFILE" >$DEBFILE.sha512sum
+sha256sum "$debian_file_path" >"$debian_file_path.sha256sum"
+sha512sum "$debian_file_path" >"$debian_file_path.sha512sum"
 
-dpkg --contents "$DEBFILE"
+dpkg --contents "$debian_file_path"
 
-cp $DEBFILE .
-cp $DEBFILE.sha256sum .
-cp $DEBFILE.sha512sum .
+cp "$debian_file_path" .
+cp "$debian_file_path".sha256sum .
+cp "$debian_file_path".sha512sum .
