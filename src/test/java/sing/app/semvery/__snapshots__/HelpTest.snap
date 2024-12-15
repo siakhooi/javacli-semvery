@@ -1,5 +1,5 @@
 sing.app.semvery.HelpTest.testPrintHelp=[
-semvery 0.10.2
+semvery 0.10.3
 Usage: semvery [options]
   Options:
     --operation, -o

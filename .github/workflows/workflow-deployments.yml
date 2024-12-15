@@ -5,25 +5,18 @@ on:
 
 
 jobs:
-  build-maven-deb:
-    uses: ./.github/workflows/build-maven-deb.yml
-  sonarcloud:
-    needs: build-maven-deb
-    uses: ./.github/workflows/quality-sonarcloud.yml
+  build-with-quality-checks:
+    uses: ./.github/workflows/workflow-build-with-quality-checks.yml
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  codeclimate:
-    needs: build-maven-deb
-    uses: ./.github/workflows/quality-codeclimate.yml
-    secrets:
       CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
   release-assets:
-    needs: [sonarcloud, codeclimate]
+    needs: build-with-quality-checks
     uses: ./.github/workflows/deploy-github-release-assets.yml
     secrets:
       TOKEN_TO_UPLOAD_ASSETS: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
   siakhooi-apt:
-    needs: [sonarcloud, codeclimate]
+    needs: build-with-quality-checks
     uses: ./.github/workflows/publish-to-siakhooi-apt.yml
     secrets:
       PUBLISH_TO_APT_GITHUB_TOKEN: ${{ secrets.PUBLISH_TO_APT_GITHUB_TOKEN }}
