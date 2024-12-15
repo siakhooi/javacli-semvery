@@ -10,7 +10,9 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 
 @ExtendWith({SnapshotExtension.class})
 class VersionTest {
-  private Expect expect;
+    private static final String CURRENT_VERSION = "0.10.2";
+
+    private Expect expect;
 
   @Test
   void testGetAPPLICATION_NAME() {
@@ -19,7 +21,7 @@ class VersionTest {
 
   @Test
   void testGetAPPLICATION_VERSION() {
-    assertEquals("0.10.1", Version.getAPPLICATION_VERSION());
+    assertEquals(CURRENT_VERSION, Version.getAPPLICATION_VERSION());
   }
 
   @Test
