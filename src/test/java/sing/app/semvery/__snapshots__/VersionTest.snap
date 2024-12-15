@@ -1,10 +1,10 @@
 sing.app.semvery.VersionTest.testPrintApplicationVersion=[
-semvery 0.10.3
+semvery 0.11.0
 
 ]
 
 
 sing.app.semvery.VersionTest.testPrintVersion=[
-0.10.3
+0.11.0
 
 ]
