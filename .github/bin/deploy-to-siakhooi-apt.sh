@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly apt_repo_url="https://${PUBLISH_TO_APT_GITHUB_TOKEN}@github.com/siakhooi/apt.git"
+readonly apt_repo_url="https://${PUBLISH_TO_GITHUB_REPO_TOKEN}@github.com/siakhooi/apt.git"
 readonly apt_repo_branch=main
 readonly apt_repo_directory=apt
 readonly apt_repo_path=docs/pool/main/binary-amd64
