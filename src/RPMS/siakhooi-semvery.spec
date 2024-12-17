@@ -1,5 +1,5 @@
 Name:           siakhooi-semvery
-Version:        0.11.0
+Version:        0.11.1
 Release:        1%{?dist}
 Summary:        semver utilities
 
@@ -9,6 +9,7 @@ Source0:        https://github.com/siakhooi/%{name}/archive/refs/tags/${version}
 BuildArch:      noarch
 
 Requires:       bash
+Requires:       jre-17-headless
 
 %description
 semver utilities
@@ -31,6 +32,9 @@ install %{_working_directory}/LICENSE %{_builddir}
 %{_libdir}/java/siakhooi/semvery*-jar-with-dependencies.jar
 
 %changelog
+* Tue Dec 17 2024 Siak Hooi <siakhooi@gmail.com> - 0.11.1
+- fix rpm missing jre dependency
+
 * Sun Dec 15 2024 Siak Hooi <siakhooi@gmail.com> - 0.11.0
 - create rpm package
 
