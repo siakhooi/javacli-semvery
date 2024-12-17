@@ -17,6 +17,10 @@ jobs:
           path: ./
       - uses: actions/download-artifact@v4
         with:
+          name: rpm-deliverables
+          path: ./
+      - uses: actions/download-artifact@v4
+        with:
           name: target
           path: ./target/
       - run: ls -l
@@ -40,3 +44,18 @@ jobs:
           repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
           file_glob: true
           file: ./target/*.jar
+      - uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
+          file_glob: true
+          file: ./*.rpm
+      - uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
+          file_glob: true
+          file: ./*.rpm.sha256sum
+      - uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
+          file_glob: true
+          file: ./*.rpm.sha512sum

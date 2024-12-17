@@ -16,6 +16,9 @@ jobs:
   build-deb:
     needs: build-maven
     uses: ./.github/workflows/build-deb.yml
+  build-rpm:
+    needs: build-maven
+    uses: ./.github/workflows/build-rpm.yml
   sonarcloud:
     needs: [build-maven, build-deb]
     uses: ./.github/workflows/quality-sonarcloud.yml
