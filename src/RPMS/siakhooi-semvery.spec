@@ -1,5 +1,5 @@
 Name:           siakhooi-semvery
-Version:        0.11.1
+Version:        1.0.0
 Release:        1%{?dist}
 Summary:        semver utilities
 
@@ -32,6 +32,9 @@ install %{_working_directory}/LICENSE %{_builddir}
 %{_libdir}/java/siakhooi/semvery*-jar-with-dependencies.jar
 
 %changelog
+* Sat Dec 21 2024 Siak Hooi <siakhooi@gmail.com> - 1.0.0
+- Release 1, apply formatter
+
 * Tue Dec 17 2024 Siak Hooi <siakhooi@gmail.com> - 0.11.1
 - fix rpm missing jre dependency
 

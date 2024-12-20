@@ -1,3 +1,6 @@
+verify-deb: clean build build-deb
+verify-rpms: clean build build-rpms
+
 clean:
 	mvn clean
 	rm -f siakhooi-semvery_*_amd64.deb \
@@ -15,7 +18,7 @@ create-release:
 	scripts/create-release.sh
 
 build:
-	mvn clean verify
+	mvn verify
 	scripts/shellcheck.sh
 build-deb:
 	scripts/build-deb.sh

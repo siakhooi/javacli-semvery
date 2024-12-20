@@ -2,13 +2,13 @@ package sing.app.semvery;
 
 public class ResultPrinter {
 
-  private ResultPrinter() {}
+    private ResultPrinter() {}
 
-  public static void output(OperationResult operationResult) {
-    Console.printResult("Value", "Result");
-    Console.printResult("-----", "-----");
+    public static void output(OperationResult operationResult) {
+        Console.printResult("Value", "Result");
+        Console.printResult("-----", "-----");
 
-    for (var r : operationResult.getResultEntries())
-      Console.printResult(r.value(), r.result());
-  }
+        for (var r : operationResult.getResultEntries())
+            Console.printResult(r.value(), r.result());
+    }
 }

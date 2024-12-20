@@ -5,6 +5,6 @@ import sing.app.semvery.OperationResult;
 
 public interface OperationProcessorInterface {
 
-  OperationResult process(List<String> versions, String refVersion);
+    OperationResult process(List<String> versions, String refVersion);
 
 }

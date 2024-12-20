@@ -10,8 +10,8 @@ import sing.app.semvery.processor.OperationProcessorInterface;
 
 @SuppressWarnings({"java:S115"})
 public enum Operation {
-    isValid(new IsValidProcessor(), false), isStable(new IsStableProcessor(), false), 
-    isGreater(new IsGreaterProcessor(), true), isLower(new IsLowerProcessor(), true), 
+    isValid(new IsValidProcessor(), false), isStable(new IsStableProcessor(), false),
+    isGreater(new IsGreaterProcessor(), true), isLower(new IsLowerProcessor(), true),
     isEqual(new IsEqualProcessor(), true), isEquivalent(new IsEquivalentProcessor(), true);
 
     private OperationProcessorInterface processor;
