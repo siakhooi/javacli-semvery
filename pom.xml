@@ -20,14 +20,23 @@
     <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
     <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
 
-    <junit.version>5.10.0-M1</junit.version>
+    <junit.version>5.12.0</junit.version>
     <jcommander.version>1.82</jcommander.version>
-    <lombok.version>1.18.28</lombok.version>
-    <snapshot-testing.version>4.0.6</snapshot-testing.version>
-    <mockito.version>5.3.1</mockito.version>
+    <lombok.version>1.18.36</lombok.version>
+    <snapshot-testing.version>4.0.8</snapshot-testing.version>
+    <mockito.version>5.16.0</mockito.version>
     <semver4j.version>4.3.0</semver4j.version>
-    <slf4j-simple.version>2.0.7</slf4j-simple.version>
+    <slf4j-simple.version>2.0.17</slf4j-simple.version>
     <system-lambda.version>1.2.1</system-lambda.version>
+
+    <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+    <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
+    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+    <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
+    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+    <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
+    <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
 
     <sonar.organization>siakhooi</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -90,7 +99,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.6.0</version> <!--$NO-MVN-MAN-VER$-->
+        <version>${maven-assembly-plugin.version}</version> <!--$NO-MVN-MAN-VER$-->
         <executions>
           <execution>
             <id>make-fat-jar-assembly</id>
@@ -114,7 +123,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.10</version>
+        <version>${jacoco-maven-plugin.version}</version>
         <executions>
           <execution>
             <id>default-prepare-agent</id>
@@ -155,27 +164,27 @@
       <plugins>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M7</version>
+          <version>${maven-surefire-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>${maven-clean-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>${maven-resources-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.10.1</version>
+          <version>${maven-compiler-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.2.2</version>
+          <version>${maven-jar-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.0.0-M1</version>
+          <version>${maven-install-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
