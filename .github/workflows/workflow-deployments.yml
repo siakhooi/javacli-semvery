@@ -9,7 +9,8 @@ jobs:
     uses: ./.github/workflows/workflow-build-with-quality-checks.yml
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
+      # CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
+      QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}
   release-assets:
     needs: build-with-quality-checks
     uses: ./.github/workflows/deploy-github-release-assets.yml

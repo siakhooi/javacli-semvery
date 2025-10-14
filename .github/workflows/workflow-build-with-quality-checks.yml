@@ -7,7 +7,9 @@ on:
     secrets:
       SONAR_TOKEN:
         required: true
-      CODE_CLIMATE_REPORT_TOKEN:
+      # CODE_CLIMATE_REPORT_TOKEN:
+      #   required: true
+      QLTY_COVERAGE_TOKEN:
         required: true
 
 jobs:

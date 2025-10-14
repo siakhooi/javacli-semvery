@@ -18,5 +18,5 @@ jobs:
       - run: ls -R
       - uses: qltysh/qlty-action/coverage@v2
         with:
-          token: {{secrets.QLTY_COVERAGE_TOKEN}}
+          token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
           files: target/site/jacoco/jacoco.xml
