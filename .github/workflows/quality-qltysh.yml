@@ -20,3 +20,4 @@ jobs:
         with:
           token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
           files: target/site/jacoco/jacoco.xml
+          add-prefix: src/main/java
