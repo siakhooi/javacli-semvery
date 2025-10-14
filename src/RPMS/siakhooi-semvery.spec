@@ -32,6 +32,9 @@ install %{_working_directory}/LICENSE %{_builddir}
 %{_libdir}/java/siakhooi/semvery*-jar-with-dependencies.jar
 
 %changelog
+* Tue Oct 14 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.1
+- Dependencies upgrade
+
 * Sat Dec 21 2024 Siak Hooi <siakhooi@gmail.com> - 1.0.0
 - Release 1, apply formatter
 

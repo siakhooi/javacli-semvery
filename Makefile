@@ -1,5 +1,5 @@
-verify-deb: clean build build-deb
-verify-rpms: clean build build-rpms
+all-deb: clean build build-deb
+all-rpm: clean build build-rpms
 
 clean:
 	mvn clean
@@ -12,9 +12,9 @@ clean:
 
 set-version:
 	scripts/set-version.sh
-git-commit-and-push:
+commit:
 	scripts/git-commit-and-push.sh
-create-release:
+release:
 	scripts/create-release.sh
 
 build:

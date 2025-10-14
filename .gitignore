@@ -2,6 +2,9 @@
 *.deb.sha256sum
 *.deb.sha512sum
 *.snap.debug
+*.rpm
+*.rpm.sha256sum
+*.rpm.sha512sum
 
 # Created by https://www.toptal.com/developers/gitignore/api/maven,java,eclipse,visualstudiocode,netbeans,intellij
 # Edit at https://www.toptal.com/developers/gitignore?templates=maven,java,eclipse,visualstudiocode,netbeans,intellij
