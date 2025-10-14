@@ -29,6 +29,8 @@ semver utilities
 ![Code Climate issues](https://img.shields.io/codeclimate/issues/siakhooi/javacli-semvery)
 ![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/siakhooi/javacli-semvery)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b0155bde6c18b4bf37ee/test_coverage)](https://codeclimate.com/github/siakhooi/javacli-semvery/test_coverage)
+[![Maintainability](https://qlty.sh/gh/siakhooi/projects/javacli-semvery/maintainability.svg)](https://qlty.sh/gh/siakhooi/projects/javacli-semvery)
+
 ![Quality-Sonar](https://img.shields.io/badge/Quality-SonarCloud-purple)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_javacli-semvery&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=siakhooi_javacli-semvery)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_javacli-semvery&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=siakhooi_javacli-semvery)

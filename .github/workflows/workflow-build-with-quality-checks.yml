@@ -24,8 +24,13 @@ jobs:
     uses: ./.github/workflows/quality-sonarcloud.yml
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  codeclimate:
+  # codeclimate:
+  #   needs: [build-maven, build-deb]
+  #   uses: ./.github/workflows/quality-codeclimate.yml
+  #   secrets:
+  #     CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
+  qltysh:
     needs: [build-maven, build-deb]
-    uses: ./.github/workflows/quality-codeclimate.yml
+    uses: ./.github/workflows/quality-qltysh.yml
     secrets:
-      CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
+      QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}

@@ -1,0 +1,22 @@
+name: Qlty.sh
+
+on:
+  workflow_call:
+    secrets:
+      QLTY_COVERAGE_TOKEN:
+        required: true
+
+jobs:
+  QltySh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          name: target
+          path: ./target/
+      - run: ls -R
+      - uses: qltysh/qlty-action/coverage@v2
+        with:
+          token: {{secrets.QLTY_COVERAGE_TOKEN}}
+          files: target/site/jacoco/jacoco.xml
