@@ -23,13 +23,9 @@ semver utilities
 ![GitHub all releases](https://img.shields.io/github/downloads/siakhooi/javacli-semvery/total?color=33cb56&logo=github)
 ![GitHub Release Date](https://img.shields.io/github/release-date/siakhooi/javacli-semvery?logo=github)
 
-![Quality-CodeClimate](https://img.shields.io/badge/Quality-CodeClimate-purple)
-[![Maintainability](https://api.codeclimate.com/v1/badges/b0155bde6c18b4bf37ee/maintainability)](https://codeclimate.com/github/siakhooi/javacli-semvery/maintainability)
-![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability-percentage/siakhooi/javacli-semvery)
-![Code Climate issues](https://img.shields.io/codeclimate/issues/siakhooi/javacli-semvery)
-![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/siakhooi/javacli-semvery)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b0155bde6c18b4bf37ee/test_coverage)](https://codeclimate.com/github/siakhooi/javacli-semvery/test_coverage)
+![Quality-Qlty](https://img.shields.io/badge/Quality-Qlty-purple)
 [![Maintainability](https://qlty.sh/gh/siakhooi/projects/javacli-semvery/maintainability.svg)](https://qlty.sh/gh/siakhooi/projects/javacli-semvery)
+[![Code Coverage](https://qlty.sh/gh/siakhooi/projects/javacli-semvery/coverage.svg)](https://qlty.sh/gh/siakhooi/projects/javacli-semvery)
 
 ![Quality-Sonar](https://img.shields.io/badge/Quality-SonarCloud-purple)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_javacli-semvery&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=siakhooi_javacli-semvery)
@@ -86,7 +82,7 @@ $ sudo yum install siakhooi-path2json
 
 ### Quality
 
-- CodeClimate: <https://codeclimate.com/github/siakhooi/javacli-semvery>
+- Qlty.sh: <https://qlty.sh/gh/siakhooi/projects/javacli-semvery>
 - SonarCloud: <https://sonarcloud.io/project/overview?id=siakhooi_javacli-semvery>
 
 ## Run

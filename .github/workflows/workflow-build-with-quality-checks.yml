@@ -7,8 +7,6 @@ on:
     secrets:
       SONAR_TOKEN:
         required: true
-      # CODE_CLIMATE_REPORT_TOKEN:
-      #   required: true
       QLTY_COVERAGE_TOKEN:
         required: true
 
@@ -26,11 +24,6 @@ jobs:
     uses: ./.github/workflows/quality-sonarcloud.yml
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  # codeclimate:
-  #   needs: [build-maven, build-deb]
-  #   uses: ./.github/workflows/quality-codeclimate.yml
-  #   secrets:
-  #     CODE_CLIMATE_REPORT_TOKEN: ${{ secrets.CODE_CLIMATE_REPORT_TOKEN }}
   qltysh:
     needs: [build-maven, build-deb]
     uses: ./.github/workflows/quality-qltysh.yml
