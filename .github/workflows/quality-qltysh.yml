@@ -15,9 +15,6 @@ jobs:
         with:
           name: target
           path: ./target/
-      - run: ls -R
-      - uses: qltysh/qlty-action/coverage@v2
-        with:
-          token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
-          files: target/site/jacoco/jacoco.xml
-          add-prefix: src/main/java/
+      - run: .github/bin/qlty-coverage-publish.sh
+        env:
+          QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}

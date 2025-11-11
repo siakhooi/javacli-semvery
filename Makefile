@@ -27,3 +27,6 @@ build-rpms:
 
 test-man:
 	pandoc src/deb/md/semvery.1.md -s -t man | man -l -
+
+qlty-check:
+	qlty check --all
