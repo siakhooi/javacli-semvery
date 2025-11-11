@@ -4,7 +4,11 @@ set -ex
 curl https://qlty.sh | bash
 
 # shellcheck disable=SC1091
-source "$HOME/.bashrc"
+# source "$HOME/.bashrc"
+
+export PATH="$HOME/.qlty/bin:$PATH"
+
+which qlty
 
 qlty coverage publish --override-branch=main  \
 --format=jacoco target/site/jacoco/jacoco.xml \
