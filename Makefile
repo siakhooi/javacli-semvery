@@ -1,5 +1,5 @@
-all-deb: clean build build-deb
-all-rpm: clean build build-rpms
+all-deb: clean set-version build build-deb
+all-rpm: clean set-version build build-rpms
 
 clean:
 	mvn clean

@@ -1,5 +1,5 @@
 Name:           siakhooi-semvery
-Version:        1.0.2
+Version:        1.0.3
 Release:        1%{?dist}
 Summary:        semver utilities
 
@@ -9,7 +9,7 @@ Source0:        https://github.com/siakhooi/%{name}/archive/refs/tags/${version}
 BuildArch:      noarch
 
 Requires:       bash
-Requires:       jre-17-headless
+Requires:       jre-21-headless
 
 %description
 semver utilities
@@ -32,6 +32,9 @@ install %{_working_directory}/LICENSE %{_builddir}
 %{_libdir}/java/siakhooi/semvery*-jar-with-dependencies.jar
 
 %changelog
+* Sun Nov 16 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.2
+- Dependencies upgrade
+
 * Tue Oct 14 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.1
 - Dependencies upgrade
 

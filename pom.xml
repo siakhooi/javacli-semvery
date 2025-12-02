@@ -7,13 +7,13 @@
 
   <groupId>sing.app</groupId>
   <artifactId>semvery</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <name>semvery</name>
   <url>https://github.com/siakhooi/javacli-semvery</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>17</java.version>
+    <java.version>21</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>

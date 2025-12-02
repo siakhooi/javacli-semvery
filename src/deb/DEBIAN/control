@@ -1,7 +1,7 @@
 Package: siakhooi-semvery
-Version: 1.0.2
+Version: 1.0.3
 Maintainer: Siak Hooi <siakhooi@gmail.com>
-Depends: default-jre-headless|openjdk-17-jre-headless|openjdk-18-jre-headless|openjdk-19-jre-headless
+Depends: default-jre-headless|openjdk-21-jre-headless|openjdk-22-jre-headless|openjdk-23-jre-headless
 Architecture: amd64
 Homepage: <https://github.com/siakhooi/javacli-semvery>
 Description: semver utilities
