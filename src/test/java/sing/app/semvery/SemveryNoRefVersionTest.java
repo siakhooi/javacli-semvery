@@ -31,7 +31,7 @@ class SemveryNoRefVersionTest {
     assertDoesNotThrow(() -> expect.toMatchSnapshot(error));
   }
 
-  private static Stream<Arguments> test_no_refVersion() {
+  static Stream<Arguments> test_no_refVersion() {
     ArrayList<Arguments> a = new ArrayList<>();
     final String DUMMY_VERSION = "1.0.0";
 

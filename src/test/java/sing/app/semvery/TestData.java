@@ -6,7 +6,7 @@ import java.util.List;
 import org.junit.jupiter.params.provider.Arguments;
 
 public class TestData {
-    public TestData() {}
+    private TestData() {}
 
     public static final String[] OPERATIONS = new String[] {"-o", "--operation"};
 

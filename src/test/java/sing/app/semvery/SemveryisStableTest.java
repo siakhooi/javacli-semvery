@@ -33,7 +33,7 @@ class SemveryisStableTest {
         assertDoesNotThrow(() -> expect.scenario(scenario).toMatchSnapshot(text));
     }
 
-    private static Stream<Arguments> testIsStable() {
+    static Stream<Arguments> testIsStable() {
         ArrayList<Arguments> a = new ArrayList<>();
 
         final ReturnValue ok = ReturnValue.OK;

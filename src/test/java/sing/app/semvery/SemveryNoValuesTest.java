@@ -31,7 +31,7 @@ class SemveryNoValuesTest {
     assertDoesNotThrow(() -> expect.toMatchSnapshot(error));
   }
 
-  private static Stream<Arguments> test_no_value() {
+  static Stream<Arguments> test_no_value() {
     ArrayList<Arguments> a = new ArrayList<>();
 
     for (String o : TestData.OPERATIONS) {

@@ -33,7 +33,7 @@ class SemveryisGreaterTest {
         assertDoesNotThrow(() -> expect.scenario(scenario).toMatchSnapshot(text));
     }
 
-    private static Stream<Arguments> testIsGreater() {
+    static Stream<Arguments> testIsGreater() {
         ArrayList<Arguments> a = new ArrayList<>();
 
         final ReturnValue ok = ReturnValue.OK;

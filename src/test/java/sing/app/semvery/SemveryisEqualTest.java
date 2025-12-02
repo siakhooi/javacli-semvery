@@ -33,7 +33,7 @@ class SemveryisEqualTest {
         assertDoesNotThrow(() -> expect.scenario(scenario).toMatchSnapshot(text));
     }
 
-    private static Stream<Arguments> testIsEqual() {
+    static Stream<Arguments> testIsEqual() {
         ArrayList<Arguments> a = new ArrayList<>();
 
         final ReturnValue ok = ReturnValue.OK;
