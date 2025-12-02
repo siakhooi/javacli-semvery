@@ -39,20 +39,20 @@ class SemveryisValidTest {
         final ReturnValue ok = ReturnValue.OK;
         final ReturnValue nok = ReturnValue.NOT_OK;
         final String OPERATOR = "isValid";
-        final String[] ANY = new String[] {"--any"};
-        final String[] EMPTY = new String[] {};
+        final String[] anyArgs = new String[] {"--any"};
+        final String[] emptyArgs = new String[] {};
 
         for (String o : TestData.OPERATIONS) {
-            a.addAll(createArguments("all-valid", ok, o, OPERATOR, EMPTY, TestData.ALL_VALID));
-            a.addAll(createArguments("all-valid", ok, o, OPERATOR, ANY, TestData.ALL_VALID));
+            a.addAll(createArguments("all-valid", ok, o, OPERATOR, emptyArgs, TestData.ALL_VALID));
+            a.addAll(createArguments("all-valid", ok, o, OPERATOR, anyArgs, TestData.ALL_VALID));
 
-            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, EMPTY,
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, emptyArgs,
                     TestData.ALL_NOT_VALID));
-            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_NOT_VALID));
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, anyArgs, TestData.ALL_NOT_VALID));
 
-            a.addAll(createArguments("mixed-valid-not-valid", nok, o, OPERATOR, EMPTY,
+            a.addAll(createArguments("mixed-valid-not-valid", nok, o, OPERATOR, emptyArgs,
                     TestData.VALID_NOT_VALID));
-            a.addAll(createArguments("mixed-valid-not-valid", ok, o, OPERATOR, ANY,
+            a.addAll(createArguments("mixed-valid-not-valid", ok, o, OPERATOR, anyArgs,
                     TestData.VALID_NOT_VALID));
         }
 

@@ -17,7 +17,7 @@ class ParametersTest {
   void testPrintUsage() throws Exception {
     Parameters p = new Parameters();
     p.process(new String[] {"-h"});
-    String text = tapSystemOut(() -> p.printUsage());
+    String text = tapSystemOut(p::printUsage);
     assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
   }
 

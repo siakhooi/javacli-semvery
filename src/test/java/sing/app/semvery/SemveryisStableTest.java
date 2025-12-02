@@ -39,38 +39,38 @@ class SemveryisStableTest {
         final ReturnValue ok = ReturnValue.OK;
         final ReturnValue nok = ReturnValue.NOT_OK;
         final String OPERATOR = "isStable";
-        final String[] ANY = new String[] {"--any"};
-        final String[] EMPTY = new String[] {};
+        final String[] anyArgs = new String[] {"--any"};
+        final String[] emptyArgs = new String[] {};
 
         for (String o : TestData.OPERATIONS) {
-            a.addAll(createArguments("all-stable", ok, o, OPERATOR, EMPTY, TestData.ALL_STABLE));
-            a.addAll(createArguments("all-stable", ok, o, OPERATOR, ANY, TestData.ALL_STABLE));
+            a.addAll(createArguments("all-stable", ok, o, OPERATOR, emptyArgs, TestData.ALL_STABLE));
+            a.addAll(createArguments("all-stable", ok, o, OPERATOR, anyArgs, TestData.ALL_STABLE));
 
-            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, EMPTY,
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, emptyArgs,
                     TestData.ALL_NOT_VALID));
-            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, ANY, TestData.ALL_NOT_VALID));
+            a.addAll(createArguments("all-not-valid", nok, o, OPERATOR, anyArgs, TestData.ALL_NOT_VALID));
 
-            a.addAll(createArguments("all-not-stable", nok, o, OPERATOR, EMPTY,
+            a.addAll(createArguments("all-not-stable", nok, o, OPERATOR, emptyArgs,
                     TestData.ALL_NOT_STABLE));
-            a.addAll(createArguments("all-not-stable", nok, o, OPERATOR, ANY,
+            a.addAll(createArguments("all-not-stable", nok, o, OPERATOR, anyArgs,
                     TestData.ALL_NOT_STABLE));
 
-            a.addAll(createArguments("mixed-stable-not-stable", nok, o, OPERATOR, EMPTY,
+            a.addAll(createArguments("mixed-stable-not-stable", nok, o, OPERATOR, emptyArgs,
                     TestData.STABLE_NOT_STABLE));
-            a.addAll(createArguments("mixed-stable-not-stable", ok, o, OPERATOR, ANY,
+            a.addAll(createArguments("mixed-stable-not-stable", ok, o, OPERATOR, anyArgs,
                     TestData.STABLE_NOT_STABLE));
-            a.addAll(createArguments("mixed-stable-not-valid", nok, o, OPERATOR, EMPTY,
+            a.addAll(createArguments("mixed-stable-not-valid", nok, o, OPERATOR, emptyArgs,
                     TestData.STABLE_NOT_VALID));
-            a.addAll(createArguments("mixed-stable-not-valid", ok, o, OPERATOR, ANY,
+            a.addAll(createArguments("mixed-stable-not-valid", ok, o, OPERATOR, anyArgs,
                     TestData.STABLE_NOT_VALID));
-            a.addAll(createArguments("mixed-not-stable-not-valid", nok, o, OPERATOR, EMPTY,
+            a.addAll(createArguments("mixed-not-stable-not-valid", nok, o, OPERATOR, emptyArgs,
                     TestData.NOT_STABLE_NOT_VALID));
-            a.addAll(createArguments("mixed-not-stable-not-valid", nok, o, OPERATOR, ANY,
+            a.addAll(createArguments("mixed-not-stable-not-valid", nok, o, OPERATOR, anyArgs,
                     TestData.NOT_STABLE_NOT_VALID));
 
-            a.addAll(createArguments("mixed-stable-not-stable-not-valid", nok, o, OPERATOR, EMPTY,
+            a.addAll(createArguments("mixed-stable-not-stable-not-valid", nok, o, OPERATOR, emptyArgs,
                     TestData.STABLE_NOT_STABLE_NOT_VALID));
-            a.addAll(createArguments("mixed-stable-not-stable-not-valid", ok, o, OPERATOR, ANY,
+            a.addAll(createArguments("mixed-stable-not-stable-not-valid", ok, o, OPERATOR, anyArgs,
                     TestData.STABLE_NOT_STABLE_NOT_VALID));
         }
 

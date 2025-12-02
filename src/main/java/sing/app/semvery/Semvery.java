@@ -10,15 +10,21 @@ public class Semvery {
 
     Parameters parameters;
 
+    ReturnValue showHelp(Parameters parameters) throws IOException {
+        Help.printHelp(parameters);
+        return ReturnValue.OK;
+    }
+
     ReturnValue run(String[] args) throws IOException {
         parameters = new Parameters();
         parameters.process(args);
         if (parameters.help) {
-            Help.printHelp(parameters);
-            return ReturnValue.OK;
+            return showHelp(parameters);
+
         } else if (parameters.version) {
             Version.printVersion();
             return ReturnValue.OK;
+
         } else if (parameters.operation != null) {
             if (parameters.mainParameters.isEmpty()) {
                 Console.error("Must specify a version.");
@@ -34,8 +40,7 @@ public class Semvery {
 
             return result.getReturnValue(parameters.any);
         } else {
-            Help.printHelp(parameters);
-            return ReturnValue.OK;
+            return showHelp(parameters);
         }
     }
 }

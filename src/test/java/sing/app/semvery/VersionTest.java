@@ -10,7 +10,7 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 
 @ExtendWith({SnapshotExtension.class})
 class VersionTest {
-    private static final String CURRENT_VERSION = "1.0.3";
+    private static final String CURRENT_VERSION = "1.0.4";
 
     private Expect expect;
 
@@ -26,13 +26,13 @@ class VersionTest {
 
   @Test
   void testPrintApplicationVersion() throws Exception {
-    String text = tapSystemOut(() -> Version.printApplicationVersion());
+    String text = tapSystemOut(Version::printApplicationVersion);
     assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
   }
 
   @Test
   void testPrintVersion() throws Exception {
-    String text = tapSystemOut(() -> Version.printVersion());
+    String text = tapSystemOut(Version::printVersion);
     assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
   }
 }

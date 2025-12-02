@@ -23,35 +23,30 @@ class SemveryTest {
 
     @Test
     void callMainWithNoArguments() throws Exception {
-        String text = tapSystemOut(() -> {
-            assertEquals(ReturnValue.OK, app.run(new String[] {}));
-        });
+        String text = tapSystemOut(() -> assertEquals(ReturnValue.OK, app.run(new String[] {})));
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
 
     @Test
     void callMainWithArguments() throws Exception {
-        String text = tapSystemOut(() -> {
-            assertEquals(ReturnValue.OK, app.run(new String[] {"ABC", "CDE"}));
-        });
+        String text = tapSystemOut(
+                () -> assertEquals(ReturnValue.OK, app.run(new String[] {"ABC", "CDE"})));
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"-h", "--help"})
     void callMainWithHelp(String argument1) throws Exception {
-        String text = tapSystemOut(() -> {
-            assertEquals(ReturnValue.OK, app.run(new String[] {argument1}));
-        });
+        String text =
+                tapSystemOut(() -> assertEquals(ReturnValue.OK, app.run(new String[] {argument1})));
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"-v", "--version"})
     void callMainWithVersion(String argument1) throws Exception {
-        String text = tapSystemOut(() -> {
-            assertEquals(ReturnValue.OK, app.run(new String[] {argument1}));
-        });
+        String text =
+                tapSystemOut(() -> assertEquals(ReturnValue.OK, app.run(new String[] {argument1})));
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
 }

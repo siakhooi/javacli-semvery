@@ -1,5 +1,5 @@
 Name:           siakhooi-semvery
-Version:        1.0.3
+Version:        1.0.4
 Release:        1%{?dist}
 Summary:        semver utilities
 

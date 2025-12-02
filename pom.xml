@@ -7,7 +7,7 @@
 
   <groupId>sing.app</groupId>
   <artifactId>semvery</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <name>semvery</name>
   <url>https://github.com/siakhooi/javacli-semvery</url>
 
