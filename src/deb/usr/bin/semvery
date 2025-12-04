@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly VERSION=1.0.4
+readonly VERSION=1.0.5
 readonly jarfile=/usr/lib/java/siakhooi/semvery-${VERSION}-jar-with-dependencies.jar
 
 java -jar "$jarfile" "$@"

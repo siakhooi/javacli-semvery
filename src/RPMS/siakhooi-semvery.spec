@@ -1,5 +1,5 @@
 Name:           siakhooi-semvery
-Version:        1.0.4
+Version:        1.0.5
 Release:        1%{?dist}
 Summary:        semver utilities
 
@@ -32,6 +32,15 @@ install %{_working_directory}/LICENSE %{_builddir}
 %{_libdir}/java/siakhooi/semvery*-jar-with-dependencies.jar
 
 %changelog
+* Thu Dec 4 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.5
+- Fix Quality issues
+
+* Wed Dec 3 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.4
+- Fix Quality issues
+
+* Tue Dec 2 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.3
+- Upgrade to java 21
+
 * Sun Nov 16 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.2
 - Dependencies upgrade
 
