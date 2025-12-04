@@ -3,7 +3,6 @@ package sing.app.semvery;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,21 +13,17 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 @ExtendWith({SnapshotExtension.class})
 class SemveryTest {
     private Expect expect;
-    private Semvery app;
-
-    @BeforeEach
-    void setup() {
-        this.app = new Semvery();
-    }
 
     @Test
     void callMainWithNoArguments() throws Exception {
+        Semvery app = new Semvery();
         String text = tapSystemOut(() -> assertEquals(ReturnValue.OK, app.run(new String[] {})));
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
 
     @Test
     void callMainWithArguments() throws Exception {
+        Semvery app = new Semvery();
         String text = tapSystemOut(
                 () -> assertEquals(ReturnValue.OK, app.run(new String[] {"ABC", "CDE"})));
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
@@ -47,6 +42,7 @@ class SemveryTest {
     }
 
     private void assertCommandWithSnapshot(String argument) throws Exception {
+        Semvery app = new Semvery();
         String text =
                 tapSystemOut(() -> assertEquals(ReturnValue.OK, app.run(new String[] {argument})));
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));

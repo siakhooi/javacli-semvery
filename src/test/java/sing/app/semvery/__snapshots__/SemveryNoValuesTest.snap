@@ -1,4 +1,4 @@
-sing.app.semvery.SemveryNoValuesTest.test_no_value=[
+sing.app.semvery.SemveryNoValuesTest.testNoValue=[
 Must specify a version.
 
 ]

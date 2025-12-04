@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.stream.Stream;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -16,22 +15,17 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 
 @ExtendWith({SnapshotExtension.class})
 class SemveryNoRefVersionTest {
-  private Semvery app;
   private Expect expect;
-
-  @BeforeEach
-  void setup() {
-    this.app = new Semvery();
-  }
 
   @ParameterizedTest
   @MethodSource
-  void test_no_refVersion(ReturnValue returnValue, String[] arguments) throws Exception {
+  void testNoRefVersion(ReturnValue returnValue, String[] arguments) throws Exception {
+    Semvery app = new Semvery();
     String error = tapSystemErr(() -> assertEquals(returnValue, app.run(arguments)));
     assertDoesNotThrow(() -> expect.toMatchSnapshot(error));
   }
 
-  static Stream<Arguments> test_no_refVersion() {
+  static Stream<Arguments> testNoRefVersion() {
     ArrayList<Arguments> a = new ArrayList<>();
     final String DUMMY_VERSION = "1.0.0";
 

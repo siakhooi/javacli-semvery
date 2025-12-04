@@ -1,4 +1,4 @@
-sing.app.semvery.SemveryNoRefVersionTest.test_no_refVersion=[
+sing.app.semvery.SemveryNoRefVersionTest.testNoRefVersion=[
 Must specify a refVersion.
 
 ]

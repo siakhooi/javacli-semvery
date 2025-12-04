@@ -10,37 +10,41 @@ public class Semvery {
 
     Parameters parameters;
 
-    ReturnValue showHelp(Parameters parameters) throws IOException {
-        Help.printHelp(parameters);
-        return ReturnValue.OK;
-    }
-
     ReturnValue run(String[] args) throws IOException {
         parameters = new Parameters();
         parameters.process(args);
+
+        ReturnValue returnValue = ReturnValue.OK;
+
         if (parameters.help) {
-            return showHelp(parameters);
+            Help.printHelp(parameters);
 
         } else if (parameters.version) {
             Version.printVersion();
-            return ReturnValue.OK;
 
         } else if (parameters.operation != null) {
-            if (parameters.mainParameters.isEmpty()) {
-                Console.error("Must specify a version.");
-                return ReturnValue.WRONG_PARAMETER;
-            }
-            if (parameters.operation.requireRefVersion() && parameters.refVersion == null) {
-                Console.error("Must specify a refVersion.");
-                return ReturnValue.WRONG_PARAMETER;
-            }
-            var result = parameters.operation.getProcessor().process(parameters.mainParameters,
-                    parameters.refVersion);
-            ResultPrinter.output(result);
+            returnValue = processOperation();
 
-            return result.getReturnValue(parameters.any);
         } else {
-            return showHelp(parameters);
+            Help.printHelp(parameters);
         }
+
+        return returnValue;
+    }
+
+    private ReturnValue processOperation() {
+        if (parameters.mainParameters.isEmpty()) {
+            Console.error("Must specify a version.");
+            return ReturnValue.WRONG_PARAMETER;
+        }
+        if (parameters.operation.requireRefVersion() && parameters.refVersion == null) {
+            Console.error("Must specify a refVersion.");
+            return ReturnValue.WRONG_PARAMETER;
+        }
+        var result = parameters.operation.getProcessor().process(parameters.mainParameters,
+                parameters.refVersion);
+        ResultPrinter.output(result);
+
+        return result.getReturnValue(parameters.any);
     }
 }

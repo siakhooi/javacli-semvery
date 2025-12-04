@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static sing.app.semvery.TestData.createArguments;
 import java.util.ArrayList;
 import java.util.stream.Stream;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -17,18 +16,13 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 @ExtendWith({SnapshotExtension.class})
 class SemveryisValidTest {
 
-    private Semvery app;
     private Expect expect;
-
-    @BeforeEach
-    void setup() {
-        this.app = new Semvery();
-    }
 
     @ParameterizedTest
     @MethodSource
     void testIsValid(String scenario, ReturnValue returnValue, String[] arguments)
             throws Exception {
+        Semvery app = new Semvery();
         String text = tapSystemOut(() -> assertEquals(returnValue, app.run(arguments)));
         assertDoesNotThrow(() -> expect.scenario(scenario).toMatchSnapshot(text));
     }

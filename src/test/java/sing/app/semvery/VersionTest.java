@@ -15,12 +15,12 @@ class VersionTest {
     private Expect expect;
 
   @Test
-  void testGetAPPLICATION_NAME() {
+  void testGetApplicationName() {
     assertEquals("semvery", Version.getAPPLICATION_NAME());
   }
 
   @Test
-  void testGetAPPLICATION_VERSION() {
+  void testGetApplicationVersion() {
     assertEquals(CURRENT_VERSION, Version.getAPPLICATION_VERSION());
   }
 

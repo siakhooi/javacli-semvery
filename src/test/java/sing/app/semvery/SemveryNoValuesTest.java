@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.stream.Stream;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -16,22 +15,18 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 
 @ExtendWith({SnapshotExtension.class})
 class SemveryNoValuesTest {
-  private Semvery app;
   private Expect expect;
-
-  @BeforeEach
-  void setup() {
-    this.app = new Semvery();
-  }
 
   @ParameterizedTest
   @MethodSource
-  void test_no_value(ReturnValue returnValue, String[] arguments) throws Exception {
+  void testNoValue(ReturnValue returnValue, String[] arguments) throws Exception {
+    Semvery app = new Semvery();
+
     String error = tapSystemErr(() -> assertEquals(returnValue, app.run(arguments)));
     assertDoesNotThrow(() -> expect.toMatchSnapshot(error));
   }
 
-  static Stream<Arguments> test_no_value() {
+  static Stream<Arguments> testNoValue() {
     ArrayList<Arguments> a = new ArrayList<>();
 
     for (String o : TestData.OPERATIONS) {
