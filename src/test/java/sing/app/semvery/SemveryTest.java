@@ -37,16 +37,18 @@ class SemveryTest {
     @ParameterizedTest
     @ValueSource(strings = {"-h", "--help"})
     void callMainWithHelp(String argument1) throws Exception {
-        String text =
-                tapSystemOut(() -> assertEquals(ReturnValue.OK, app.run(new String[] {argument1})));
-        assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
+        assertCommandWithSnapshot(argument1);
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"-v", "--version"})
     void callMainWithVersion(String argument1) throws Exception {
+        assertCommandWithSnapshot(argument1);
+    }
+
+    private void assertCommandWithSnapshot(String argument) throws Exception {
         String text =
-                tapSystemOut(() -> assertEquals(ReturnValue.OK, app.run(new String[] {argument1})));
+                tapSystemOut(() -> assertEquals(ReturnValue.OK, app.run(new String[] {argument})));
         assertDoesNotThrow(() -> expect.toMatchSnapshot(text));
     }
 }
