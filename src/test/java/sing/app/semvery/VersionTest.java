@@ -10,7 +10,7 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 
 @ExtendWith({SnapshotExtension.class})
 class VersionTest {
-    private static final String CURRENT_VERSION = "1.0.5";
+    private static final String CURRENT_VERSION = "1.0.6";
 
     private Expect expect;
 

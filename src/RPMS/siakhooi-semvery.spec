@@ -1,5 +1,5 @@
 Name:           siakhooi-semvery
-Version:        1.0.5
+Version:        1.0.6
 Release:        1%{?dist}
 Summary:        semver utilities
 
@@ -32,6 +32,9 @@ install %{_working_directory}/LICENSE %{_builddir}
 %{_libdir}/java/siakhooi/semvery*-jar-with-dependencies.jar
 
 %changelog
+* Fri Dec 12 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.6
+- Fix java bin
+
 * Thu Dec 4 2025 Siak Hooi <siakhooi@gmail.com> - 1.0.5
 - Fix Quality issues
 

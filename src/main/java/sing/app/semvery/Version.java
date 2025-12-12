@@ -8,7 +8,7 @@ public class Version {
     @Getter
     private static final String APPLICATION_NAME = "semvery";
     @Getter
-    private static final String APPLICATION_VERSION = "1.0.5";
+    private static final String APPLICATION_VERSION = "1.0.6";
 
     public static void printApplicationVersion() {
         Console.printf("%s %s%n", APPLICATION_NAME, APPLICATION_VERSION);
