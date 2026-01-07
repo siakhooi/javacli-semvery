@@ -44,4 +44,4 @@ semver utils.\
 MIT
 
 # BUGS
-Report bugs at https://github.com/siakhooi/javacli-semvery/issues.
+Report bugs at https://github.com/siakhooi/semvery/issues.

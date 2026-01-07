@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        semver utilities
 
 License:        MIT
-URL:            https://github.com/siakhooi/javacli-semvery
+URL:            https://github.com/siakhooi/semvery
 Source0:        https://github.com/siakhooi/%{name}/archive/refs/tags/${version}.tar.gz
 BuildArch:      noarch
 

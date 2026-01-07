@@ -1,31 +1,30 @@
-# javacli-semvery
+# semvery
 
 semver utilities
 
-![GitHub](https://img.shields.io/github/license/siakhooi/javacli-semvery?logo=github)
-![GitHub last commit](https://img.shields.io/github/last-commit/siakhooi/javacli-semvery?logo=github)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/siakhooi/javacli-semvery?logo=github)
-![GitHub issues](https://img.shields.io/github/issues/siakhooi/javacli-semvery?logo=github)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/siakhooi/javacli-semvery?logo=github)
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/siakhooi/javacli-semvery?logo=github)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/siakhooi/javacli-semvery?logo=github)
-![GitHub top language](https://img.shields.io/github/languages/top/siakhooi/javacli-semvery?logo=github)
-![GitHub language count](https://img.shields.io/github/languages/count/siakhooi/javacli-semvery?logo=github)
-![Lines of code](https://img.shields.io/tokei/lines/github/siakhooi/javacli-semvery?logo=github)
-![GitHub repo size](https://img.shields.io/github/repo-size/siakhooi/javacli-semvery?logo=github)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/siakhooi/javacli-semvery?logo=github)
+![GitHub](https://img.shields.io/github/license/siakhooi/semvery?logo=github)
+![GitHub last commit](https://img.shields.io/github/last-commit/siakhooi/semvery?logo=github)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/siakhooi/semvery?logo=github)
+![GitHub issues](https://img.shields.io/github/issues/siakhooi/semvery?logo=github)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/siakhooi/semvery?logo=github)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/siakhooi/semvery?logo=github)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/siakhooi/semvery?logo=github)
+![GitHub top language](https://img.shields.io/github/languages/top/siakhooi/semvery?logo=github)
+![GitHub language count](https://img.shields.io/github/languages/count/siakhooi/semvery?logo=github)
+![GitHub repo size](https://img.shields.io/github/repo-size/siakhooi/semvery?logo=github)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/siakhooi/semvery?logo=github)
 ![Workflow](https://img.shields.io/badge/Workflow-github-purple)
-![workflow](https://github.com/siakhooi/javacli-semvery/actions/workflows/workflow-build-with-quality-checks.yml/badge.svg)
-![workflow](https://github.com/siakhooi/javacli-semvery/actions/workflows/workflow-deployments.yml/badge.svg)
+![workflow](https://github.com/siakhooi/semvery/actions/workflows/workflow-build-with-quality-checks.yml/badge.svg)
+![workflow](https://github.com/siakhooi/semvery/actions/workflows/workflow-deployments.yml/badge.svg)
 
 ![Release](https://img.shields.io/badge/Release-github-purple)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/siakhooi/javacli-semvery?label=GPR%20release&logo=github)
-![GitHub all releases](https://img.shields.io/github/downloads/siakhooi/javacli-semvery/total?color=33cb56&logo=github)
-![GitHub Release Date](https://img.shields.io/github/release-date/siakhooi/javacli-semvery?logo=github)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/siakhooi/semvery?label=GPR%20release&logo=github)
+![GitHub all releases](https://img.shields.io/github/downloads/siakhooi/semvery/total?color=33cb56&logo=github)
+![GitHub Release Date](https://img.shields.io/github/release-date/siakhooi/semvery?logo=github)
 
 ![Quality-Qlty](https://img.shields.io/badge/Quality-Qlty-purple)
-[![Maintainability](https://qlty.sh/gh/siakhooi/projects/javacli-semvery/maintainability.svg)](https://qlty.sh/gh/siakhooi/projects/javacli-semvery)
-[![Code Coverage](https://qlty.sh/gh/siakhooi/projects/javacli-semvery/coverage.svg)](https://qlty.sh/gh/siakhooi/projects/javacli-semvery)
+[![Maintainability](https://qlty.sh/gh/siakhooi/projects/semvery/maintainability.svg)](https://qlty.sh/gh/siakhooi/projects/semvery)
+[![Code Coverage](https://qlty.sh/gh/siakhooi/projects/semvery/coverage.svg)](https://qlty.sh/gh/siakhooi/projects/semvery)
 
 ![Quality-Sonar](https://img.shields.io/badge/Quality-SonarCloud-purple)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=siakhooi_javacli-semvery&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=siakhooi_javacli-semvery)
@@ -82,7 +81,7 @@ $ sudo yum install siakhooi-path2json
 
 ### Quality
 
-- Qlty.sh: <https://qlty.sh/gh/siakhooi/projects/javacli-semvery>
+- Qlty.sh: <https://qlty.sh/gh/siakhooi/projects/semvery>
 - SonarCloud: <https://sonarcloud.io/project/overview?id=siakhooi_javacli-semvery>
 
 ## Run

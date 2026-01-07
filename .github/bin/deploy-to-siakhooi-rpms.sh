@@ -7,7 +7,7 @@ RPM_PACKAGE_FILE=$(basename "$PATH_TO_FILE")
 
 TMPDIR=$(mktemp -d)
 
-readonly component_name=javacli-semvery
+readonly component_name=semvery
 readonly TARGETPATH=docs
 readonly TARGETURL=https://${PUBLISH_TO_GITHUB_REPO_TOKEN}@github.com/siakhooi/rpms.git
 readonly TARGETBRANCH=main

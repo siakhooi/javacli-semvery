@@ -4,9 +4,9 @@ readonly apt_repo_url="https://${PUBLISH_TO_GITHUB_REPO_TOKEN}@github.com/siakho
 readonly apt_repo_branch=main
 readonly apt_repo_directory=apt
 readonly apt_repo_path=docs/pool/main/binary-amd64
-readonly git_commit_email=javacli-semvery@siakhooi.github.io
-readonly git_commit_user=javacli-semvery
-git_commit_message="javacli-semvery: Auto deploy [$(date)]"
+readonly git_commit_email=semvery@siakhooi.github.io
+readonly git_commit_user=semvery
+git_commit_message="semvery: Auto deploy [$(date)]"
 readonly git_commit_message
 
 set -e

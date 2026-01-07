@@ -3,5 +3,5 @@ Version: 1.0.6
 Maintainer: Siak Hooi <siakhooi@gmail.com>
 Depends: default-jre-headless|openjdk-21-jre-headless|openjdk-22-jre-headless|openjdk-23-jre-headless
 Architecture: amd64
-Homepage: <https://github.com/siakhooi/javacli-semvery>
+Homepage: <https://github.com/siakhooi/semvery>
 Description: semver utilities

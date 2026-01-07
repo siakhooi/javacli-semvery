@@ -9,7 +9,7 @@
   <artifactId>semvery</artifactId>
   <version>1.0.6</version>
   <name>semvery</name>
-  <url>https://github.com/siakhooi/javacli-semvery</url>
+  <url>https://github.com/siakhooi/semvery</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
