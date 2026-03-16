@@ -22,7 +22,7 @@
 
     <junit.version>6.0.3</junit.version>
     <jcommander.version>1.82</jcommander.version>
-    <lombok.version>1.18.42</lombok.version>
+    <lombok.version>1.18.44</lombok.version>
     <snapshot-testing.version>4.0.8</snapshot-testing.version>
     <mockito.version>5.23.0</mockito.version>
     <semver4j.version>6.0.0</semver4j.version>
