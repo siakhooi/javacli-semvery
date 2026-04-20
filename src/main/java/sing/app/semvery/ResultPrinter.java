@@ -12,11 +12,14 @@ public class ResultPrinter {
     }
 
     private static void printTable(OperationResult operationResult) {
-        Console.printResult("Value", "Result");
-        Console.printResult("-----", "-----");
+        printResult("Value", "Result");
+        printResult("-----", "-----");
 
         for (var r : operationResult.getResultEntries())
-            Console.printResult(r.value(), r.result());
+            printResult(r.value(), r.result());
+    }
+    private static void printResult(String value, String result) {
+        Console.printf("%-20s %-20s%n", value, result);
     }
 
     private static void printJson(OperationResult operationResult) {
