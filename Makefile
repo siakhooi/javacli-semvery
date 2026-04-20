@@ -30,3 +30,8 @@ test-man:
 
 qlty-check:
 	qlty check --all
+
+docker-build-rpm:
+	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:rpm scripts/build-rpms.sh
+docker-build-deb:
+	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:deb scripts/build-deb.sh

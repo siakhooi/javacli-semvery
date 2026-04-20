@@ -18,6 +18,7 @@ jobs:
           name: rpm-deliverables
           path: ./
 
-      - run: ./.github/bin/deploy-to-siakhooi-rpms.sh
-        env:
-          PUBLISH_TO_GITHUB_REPO_TOKEN: ${{ secrets.PUBLISH_TO_GITHUB_REPO_TOKEN }}
+      - uses: siakhooi/publish-to-repo-action@e9cd5cd0ba58db2b79bf8a3d4ed4ef57ef276ab5 # v0.1.0
+        with:
+          token: ${{ secrets.PUBLISH_TO_GITHUB_REPO_TOKEN }}
+          config-file: publish-to-rpms.yml

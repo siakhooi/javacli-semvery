@@ -23,3 +23,11 @@ sed -i 'src/test/java/sing/app/semvery/__snapshots__/SemveryTest.snap' \
 sed -i 'src/test/java/sing/app/semvery/__snapshots__/VersionTest.snap' \
   -e '2s@semvery .*@semvery '"$RELEASE_VERSION"'@g' \
   -e '8s@.*@'"$RELEASE_VERSION"'@g'
+
+# Update publish-to-apt.yml
+sed -i 'publish-to-apt.yml' -e 's@siakhooi-semvery_[0-9.]*_amd64.deb@siakhooi-semvery_'"$RELEASE_VERSION"'_amd64.deb@g'
+sed -i 'publish-to-apt.yml' -e 's@docs/pool/main/binary-amd64/siakhooi-semvery_[0-9.]*_amd64.deb@docs/pool/main/binary-amd64/siakhooi-semvery_'"$RELEASE_VERSION"'_amd64.deb@g'
+
+# Update publish-to-rpms.yml
+sed -i 'publish-to-rpms.yml' -e 's@siakhooi-semvery-[0-9.]*-1.fc43.noarch.rpm@siakhooi-semvery-'"$RELEASE_VERSION"'-1.fc43.noarch.rpm@g'
+sed -i 'publish-to-rpms.yml' -e 's@docs/siakhooi-semvery-[0-9.]*-1.fc43.noarch.rpm@docs/siakhooi-semvery-'"$RELEASE_VERSION"'-1.fc43.noarch.rpm@g'
