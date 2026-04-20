@@ -13,6 +13,9 @@ Usage: semvery [options]
       Print results as table or json (default: table)
       Default: table
       Possible Values: [table, json]
+    --silent, -s
+      No output; use exit code only
+      Default: false
     --version, -v
       Display version
     --help, -h

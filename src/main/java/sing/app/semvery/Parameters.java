@@ -19,6 +19,9 @@ public class Parameters {
     @Parameter(order = 4, names = {"--output", "-O"},
             description = "Print results as table or json (default: table)")
     OutputFormat outputFormat = OutputFormat.table;
+    @Parameter(order = 5, names = {"--silent", "-s"},
+            description = "No output; use exit code only")
+    boolean silent;
     @Parameter(order = 98, names = {"--version", "-v"}, description = "Display version",
             help = true)
     boolean version;

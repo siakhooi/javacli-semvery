@@ -17,15 +17,17 @@ public class Semvery {
         ReturnValue returnValue = ReturnValue.OK;
 
         if (parameters.help) {
-            Help.printHelp(parameters);
+            if (!parameters.silent)
+                Help.printHelp(parameters);
 
         } else if (parameters.version) {
-            Version.printVersion();
+            if (!parameters.silent)
+                Version.printVersion();
 
         } else if (parameters.operation != null) {
             returnValue = processOperation();
 
-        } else {
+        } else if (!parameters.silent) {
             Help.printHelp(parameters);
         }
 
@@ -34,16 +36,19 @@ public class Semvery {
 
     private ReturnValue processOperation() {
         if (parameters.mainParameters.isEmpty()) {
-            Console.error("Must specify a version.");
+            if (!parameters.silent)
+                Console.error("Must specify a version.");
             return ReturnValue.WRONG_PARAMETER;
         }
         if (parameters.operation.requireRefVersion() && parameters.refVersion == null) {
-            Console.error("Must specify a refVersion.");
+            if (!parameters.silent)
+                Console.error("Must specify a refVersion.");
             return ReturnValue.WRONG_PARAMETER;
         }
         var result = parameters.operation.getProcessor().process(parameters.mainParameters,
                 parameters.refVersion);
-        ResultPrinter.output(result, parameters.outputFormat);
+        if (!parameters.silent)
+            ResultPrinter.output(result, parameters.outputFormat);
 
         return result.getReturnValue(parameters.any);
     }
