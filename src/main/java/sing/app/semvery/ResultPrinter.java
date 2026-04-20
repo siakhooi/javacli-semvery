@@ -17,14 +17,23 @@ public class ResultPrinter {
     }
 
     private static void printTable(OperationResult operationResult) {
-        printResult("Value", "Result");
-        printResult("-----", "-----");
+        int valueWidth = valueColumnWidth(operationResult);
+        printResult("Value", "Result", valueWidth);
+        printResult("-".repeat(valueWidth), "-".repeat(20), valueWidth);
 
         for (var r : operationResult.getResultEntries())
-            printResult(r.value(), r.result());
+            printResult(r.value(), r.result(), valueWidth);
     }
-    private static void printResult(String value, String result) {
-        Console.printf("%-20s %-20s%n", value, result);
+
+    private static int valueColumnWidth(OperationResult operationResult) {
+        int maxLen = "Value".length();
+        for (var r : operationResult.getResultEntries())
+            maxLen = Math.max(maxLen, r.value().length());
+        return Math.min(20, Math.max(5, maxLen));
+    }
+
+    private static void printResult(String value, String result, int valueWidth) {
+        Console.printf("%-" + valueWidth + "s %-20s%n", value, result);
     }
 
     private static void printJson(OperationResult operationResult) {
