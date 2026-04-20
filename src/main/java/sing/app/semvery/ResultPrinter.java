@@ -1,6 +1,11 @@
 package sing.app.semvery;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class ResultPrinter {
+
+    private static final ObjectMapper JSON = new ObjectMapper();
 
     private ResultPrinter() {}
 
@@ -23,38 +28,10 @@ public class ResultPrinter {
     }
 
     private static void printJson(OperationResult operationResult) {
-        var entries = operationResult.getResultEntries();
-        var sb = new StringBuilder();
-        sb.append('[');
-        for (int i = 0; i < entries.size(); i++) {
-            if (i > 0)
-                sb.append(',');
-            var e = entries.get(i);
-            sb.append("{\"value\":\"").append(jsonEscape(e.value())).append("\",\"result\":\"")
-                    .append(jsonEscape(e.result())).append("\"}");
+        try {
+            Console.println(JSON.writeValueAsString(operationResult.getResultEntries()));
+        } catch (JsonProcessingException e) {
+            throw new IllegalStateException("Failed to serialize result to JSON", e);
         }
-        sb.append(']');
-        Console.println(sb.toString());
-    }
-
-    private static String jsonEscape(String s) {
-        StringBuilder out = new StringBuilder(s.length() + 8);
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            switch (c) {
-                case '\\' -> out.append("\\\\");
-                case '"' -> out.append("\\\"");
-                case '\n' -> out.append("\\n");
-                case '\r' -> out.append("\\r");
-                case '\t' -> out.append("\\t");
-                default -> {
-                    if (c < 0x20)
-                        out.append(String.format("\\u%04x", (int) c));
-                    else
-                        out.append(c);
-                }
-            }
-        }
-        return out.toString();
     }
 }
