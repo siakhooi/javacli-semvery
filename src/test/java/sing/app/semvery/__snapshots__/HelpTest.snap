@@ -10,6 +10,10 @@ Usage: semvery [options]
       Return success(status 0) if any of the values meet the operation 
       criteria, instead of all values have to meet.
       Default: false
+    --output, -O
+      Print results as table or json (default: table)
+      Default: table
+      Possible Values: [table, json]
     --version, -v
       Display version
     --help, -h

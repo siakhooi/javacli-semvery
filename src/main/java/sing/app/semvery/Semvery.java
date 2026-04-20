@@ -43,7 +43,7 @@ public class Semvery {
         }
         var result = parameters.operation.getProcessor().process(parameters.mainParameters,
                 parameters.refVersion);
-        ResultPrinter.output(result);
+        ResultPrinter.output(result, parameters.outputFormat);
 
         return result.getReturnValue(parameters.any);
     }
