@@ -29,7 +29,7 @@ public class ResultPrinter {
         int maxLen = "Value".length();
         for (var r : operationResult.getResultEntries())
             maxLen = Math.max(maxLen, r.value().length());
-        return Math.min(20, Math.max(5, maxLen));
+        return Math.clamp(maxLen, 5, 20);
     }
 
     private static void printResult(String value, String result, int valueWidth) {
