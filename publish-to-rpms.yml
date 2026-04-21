@@ -5,5 +5,5 @@ git_commit_email: semvery@siakhooi.github.io
 git_commit_message: "semvery: Auto deploy"
 
 files:
-  - source: siakhooi-semvery-1.1.0-1.fc44.noarch.rpm
-    target: docs/siakhooi-semvery-1.1.0-1.fc44.noarch.rpm
+  - source: siakhooi-semvery-1.1.0-1.fc43.noarch.rpm
+    target: docs/siakhooi-semvery-1.1.0-1.fc43.noarch.rpm
