@@ -14,7 +14,8 @@ set-version:
 	scripts/set-version.sh
 release:
 	scripts/create-release.sh
-
+run:
+	java -jar target/semvery-*-jar-with-dependencies.jar -s --operation isGreater --ref 1.0.0 1.0.1 1.0.2
 build:
 	mvn verify
 	scripts/shellcheck.sh
