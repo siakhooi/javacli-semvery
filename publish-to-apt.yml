@@ -7,3 +7,4 @@ git_commit_message: "semvery: Auto deploy"
 files:
   - source: siakhooi-semvery_*_amd64.deb
     target: docs/pool/main/binary-amd64/
+    items: 1

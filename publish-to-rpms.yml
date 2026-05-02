@@ -7,3 +7,4 @@ git_commit_message: "semvery: Auto deploy"
 files:
   - source: siakhooi-semvery-*.fc*.noarch.rpm
     target: docs/
+    items: 1
