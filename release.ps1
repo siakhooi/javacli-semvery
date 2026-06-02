@@ -3,5 +3,5 @@
 #
 # Keep $ReleaseVersion in sync with RELEASE_VERSION in release.env (Linux / shell).
 
-$ReleaseVersion = '1.1.0'
+$ReleaseVersion = '1.1.1'
 $ReleaseVendor  = 'Siak Hooi'
