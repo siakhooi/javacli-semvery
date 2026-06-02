@@ -5,3 +5,4 @@
 
 $ReleaseVersion = '1.1.1'
 $ReleaseVendor  = 'Siak Hooi'
+$ReleasePackageName = 'semvery'
