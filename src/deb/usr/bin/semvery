@@ -1,7 +1,17 @@
 #!/bin/bash
+set -euo pipefail
 
 readonly VERSION=1.1.0
-readonly jarfile=/usr/lib/java/siakhooi/semvery-${VERSION}-jar-with-dependencies.jar
+readonly jarfile="/usr/lib/java/siakhooi/semvery-${VERSION}-jar-with-dependencies.jar"
+readonly java="/usr/bin/java"
 
-# use system java
-/usr/bin/java -jar "$jarfile" "$@"
+if [[ ! -x "$java" ]]; then
+    echo "semvery: Java runtime not found or not executable: $java" >&2
+    exit 127
+fi
+if [[ ! -f "$jarfile" ]] || [[ ! -r "$jarfile" ]]; then
+    echo "semvery: JAR not found or not readable: $jarfile" >&2
+    exit 1
+fi
+
+exec "$java" -jar "$jarfile" "$@"

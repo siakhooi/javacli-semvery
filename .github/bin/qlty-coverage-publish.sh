@@ -1,10 +1,7 @@
 #!/bin/bash
 
-set -ex
+set -euxo pipefail
+
 curl https://qlty.sh | bash
-
 export PATH="$HOME/.qlty/bin:$PATH"
-
-qlty coverage publish \
---format=jacoco target/site/jacoco/jacoco.xml \
---add-prefix src/main/java/
+qlty coverage publish --format=jacoco target/site/jacoco/jacoco.xml --add-prefix src/main/java/

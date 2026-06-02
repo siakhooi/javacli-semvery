@@ -2,7 +2,7 @@ repo: siakhooi/apt
 branch: main
 git_commit_user: semvery
 git_commit_email: semvery@siakhooi.github.io
-git_commit_message: "semvery: Auto deploy"
+git_commit_message: "{repo_name}: {ref_name} | {commit_short}"
 
 files:
   - source: siakhooi-semvery_*_amd64.deb
