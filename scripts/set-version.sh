@@ -23,3 +23,5 @@ sed -i 'src/test/java/sing/app/semvery/__snapshots__/SemveryTest.snap' \
 sed -i 'src/test/java/sing/app/semvery/__snapshots__/VersionTest.snap' \
   -e '2s@semvery .*@semvery '"$RELEASE_VERSION"'@g' \
   -e '8s@.*@'"$RELEASE_VERSION"'@g'
+
+sed -i 'release.ps1' -e 's@$ReleaseVersion = ".*"@$ReleaseVersion = "'"$RELEASE_VERSION"'"@g'

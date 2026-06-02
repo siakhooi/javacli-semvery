@@ -3,9 +3,17 @@ $ErrorActionPreference = 'Stop'
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $RepoRoot
 
-$VERSION = '1.1.0'
+$releasePs1 = Join-Path $RepoRoot 'release.ps1'
+if (-not (Test-Path -LiteralPath $releasePs1)) {
+    throw "release.ps1 not found: $releasePs1"
+}
+. $releasePs1
+if ([string]::IsNullOrWhiteSpace($ReleaseVersion)) {
+    throw '$ReleaseVersion is not set or empty in release.ps1'
+}
+$VERSION = $ReleaseVersion
 $PACKAGE_NAME = 'semvery'
-$VENDOR = 'Siak Hooi'
+$VENDOR = if ($ReleaseVendor) { $ReleaseVendor } else { 'Siak Hooi' }
 
 $jar = Join-Path (Join-Path $RepoRoot 'target') "${PACKAGE_NAME}-${VERSION}-jar-with-dependencies.jar"
 if (-not (Test-Path -LiteralPath $jar)) {
