@@ -31,5 +31,5 @@ jobs:
           name: windows-deliverables
           path: |
             ./*-windows-x64.zip
-            ./jexl-executor-*.exe
-            ./jexl-executor-*.msi
+            ./semvery-*.exe
+            ./semvery-*.msi

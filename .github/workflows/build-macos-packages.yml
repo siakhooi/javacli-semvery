@@ -30,6 +30,6 @@ jobs:
         with:
           name: macos-deliverables
           path: |
-            ./jexl-executor-*-macos-*.zip
-            ./jexl-executor-*.dmg
-            ./jexl-executor-*.pkg
+            ./semvery-*-macos-*.zip
+            ./semvery-*.dmg
+            ./semvery-*.pkg

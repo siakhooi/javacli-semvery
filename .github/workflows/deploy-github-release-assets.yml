@@ -79,24 +79,24 @@ jobs:
         with:
           repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
           file_glob: true
-          file: ./jexl-executor-*.exe
+          file: ./semvery-*.exe
       - uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de # 2.11.5
         with:
           repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
           file_glob: true
-          file: ./jexl-executor-*.msi
+          file: ./semvery-*.msi
       - uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de # 2.11.5
         with:
           repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
           file_glob: true
-          file: ./jexl-executor-*-macos-*.zip
+          file: ./semvery-*-macos-*.zip
       - uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de # 2.11.5
         with:
           repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
           file_glob: true
-          file: ./jexl-executor-*.dmg
+          file: ./semvery-*.dmg
       - uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de # 2.11.5
         with:
           repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
           file_glob: true
-          file: ./jexl-executor-*.pkg
+          file: ./semvery-*.pkg
