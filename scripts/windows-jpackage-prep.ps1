@@ -1,3 +1,5 @@
+# Dot-source only from scripts/build-windows-*.ps1 (same directory).
+# Prepares jpackage/input, jpackage/runtime (jlink), and sets variables for jpackage invocations.
 $ErrorActionPreference = 'Stop'
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot
@@ -17,11 +19,12 @@ if ([string]::IsNullOrWhiteSpace($ReleasePackageName)) {
 if ([string]::IsNullOrWhiteSpace($ReleaseVendor)) {
     throw '$ReleaseVendor is not set or empty in release.ps1'
 }
+
 $VERSION = $ReleaseVersion
 $PACKAGE_NAME = $ReleasePackageName
 $VENDOR = $ReleaseVendor
 
-$jar = Join-Path (Join-Path $RepoRoot 'target') "${PACKAGE_NAME}-${VERSION}-jar-with-dependencies.jar"
+$jar = Join-Path (Join-Path $RepoRoot 'target') "${PACKAGE_NAME}.jar"
 if (-not (Test-Path -LiteralPath $jar)) {
     throw "JAR not found: $jar (run Maven package from repo root first)"
 }
@@ -47,29 +50,4 @@ if ($LASTEXITCODE -ne 0) {
     throw "jlink failed with exit code $LASTEXITCODE"
 }
 
-Push-Location -LiteralPath $jpackageRoot
-try {
-    $mainJar = "${PACKAGE_NAME}-${VERSION}-jar-with-dependencies.jar"
-    & jpackage.exe `
-        --type app-image `
-        --name $PACKAGE_NAME `
-        --input input `
-        --main-jar $mainJar `
-        --runtime-image runtime `
-        --app-version $VERSION `
-        --win-console `
-        --vendor $VENDOR
-    if ($LASTEXITCODE -ne 0) {
-        throw "jpackage failed with exit code $LASTEXITCODE"
-    }
-
-    $zipName = "${PACKAGE_NAME}-${VERSION}-windows-x64.zip"
-    $zipPath = Join-Path $RepoRoot $zipName
-    if (Test-Path -LiteralPath $zipPath) {
-        Remove-Item -LiteralPath $zipPath -Force
-    }
-    Compress-Archive -Path $PACKAGE_NAME -DestinationPath $zipPath -CompressionLevel Optimal
-}
-finally {
-    Pop-Location
-}
+$mainJar = "${PACKAGE_NAME}.jar"

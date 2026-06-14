@@ -6,3 +6,5 @@
 $ReleaseVersion = '1.1.1'
 $ReleaseVendor  = 'Siak Hooi'
 $ReleasePackageName = 'semvery'
+$ReleaseWinUpgradeUuid = 'cd831cb5-5ad3-4624-b301-78b032bfd4e9'
+$ReleaseMacPackageIdentifier = 'io.github.siakhooi.semvery'
