@@ -34,11 +34,15 @@ MAIN_JAR="${RELEASE_PACKAGE_NAME}.jar"
 
 echo "macOS jpackage prep: ${PACKAGE_NAME} ${VERSION} (vendor: ${VENDOR})"
 
-jar="${REPO_ROOT}/target/${MAIN_JAR}"
-if [[ ! -f "$jar" ]]; then
-	echo "error: JAR not found: $jar (run Maven package from repo root first)" >&2
+# Maven assembly produces *-jar-with-dependencies.jar (same as scripts/build-deb.sh).
+shopt -s nullglob
+fat_jars=( "${REPO_ROOT}"/target/*-jar-with-dependencies.jar )
+shopt -u nullglob
+if [[ ${#fat_jars[@]} -ne 1 ]]; then
+	echo "error: expected exactly one *-jar-with-dependencies.jar under target/ (run mvn package|verify from repo root first); found ${#fat_jars[@]}" >&2
 	exit 1
 fi
+jar="${fat_jars[0]}"
 
 JPACKAGE_ROOT="${REPO_ROOT}/jpackage"
 input_dir="${JPACKAGE_ROOT}/input"

@@ -23,18 +23,22 @@ if ([string]::IsNullOrWhiteSpace($ReleaseVendor)) {
 $VERSION = $ReleaseVersion
 $PACKAGE_NAME = $ReleasePackageName
 $VENDOR = $ReleaseVendor
+$mainJar = "${PACKAGE_NAME}.jar"
 
-$jar = Join-Path (Join-Path $RepoRoot 'target') "${PACKAGE_NAME}.jar"
-if (-not (Test-Path -LiteralPath $jar)) {
-    throw "JAR not found: $jar (run Maven package from repo root first)"
+# Maven assembly produces *-jar-with-dependencies.jar (same as scripts/build-deb.sh).
+$targetDir = Join-Path $RepoRoot 'target'
+$fatJars = @(Get-ChildItem -LiteralPath $targetDir -Filter '*-jar-with-dependencies.jar' -File -ErrorAction SilentlyContinue)
+if ($fatJars.Count -ne 1) {
+    throw "Expected exactly one *-jar-with-dependencies.jar under $targetDir (run mvn package|verify from repo root first); found $($fatJars.Count)"
 }
+$jar = $fatJars[0].FullName
 
 $jpackageRoot = Join-Path $RepoRoot 'jpackage'
 $inputDir = Join-Path $jpackageRoot 'input'
 $runtimeDir = Join-Path $jpackageRoot 'runtime'
 
 New-Item -ItemType Directory -Force -Path $inputDir | Out-Null
-Copy-Item -LiteralPath $jar -Destination (Join-Path $inputDir (Split-Path -Leaf $jar)) -Force
+Copy-Item -LiteralPath $jar -Destination (Join-Path $inputDir $mainJar) -Force
 
 $depsLines = & jdeps.exe --print-module-deps --ignore-missing-deps --multi-release 21 $jar
 if ($LASTEXITCODE -ne 0) {
@@ -49,5 +53,3 @@ if ([string]::IsNullOrWhiteSpace($deps)) {
 if ($LASTEXITCODE -ne 0) {
     throw "jlink failed with exit code $LASTEXITCODE"
 }
-
-$mainJar = "${PACKAGE_NAME}.jar"
