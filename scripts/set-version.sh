@@ -33,9 +33,9 @@ sed -i 'src/test/java/sing/app/semvery/VersionTest.java' -e 's@CURRENT_VERSION =
 sed -i 'src/test/java/sing/app/semvery/__snapshots__/HelpTest.snap' -e '2s@semvery .*@semvery '"$RELEASE_VERSION"'@g'
 sed -i 'src/test/java/sing/app/semvery/__snapshots__/SemveryTest.snap' \
   -e '2s@semvery .*@semvery '"$RELEASE_VERSION"'@g' \
-  -e '72s@semvery .*@semvery '"$RELEASE_VERSION"'@g' \
-  -e '142s@semvery .*@semvery '"$RELEASE_VERSION"'@g' \
-  -e '212s@.*@'"$RELEASE_VERSION"'@g'
+  -e '79s@semvery .*@semvery '"$RELEASE_VERSION"'@g' \
+  -e '156s@semvery .*@semvery '"$RELEASE_VERSION"'@g' \
+  -e '233s@.*@'"$RELEASE_VERSION"'@g'
 
 sed -i 'src/test/java/sing/app/semvery/__snapshots__/VersionTest.snap' \
   -e '2s@semvery .*@semvery '"$RELEASE_VERSION"'@g' \

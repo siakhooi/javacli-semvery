@@ -1,5 +1,5 @@
 Name:           siakhooi-semvery
-Version:        1.1.1
+Version:        1.1.2
 Release:        1%{?dist}
 Summary:        semver utilities
 
@@ -32,6 +32,10 @@ install %{_working_directory}/LICENSE %{_builddir}
 %{_libdir}/java/siakhooi/semvery*-jar-with-dependencies.jar
 
 %changelog
+* Sun Jun 14 2026 Siak Hooi <siakhooi@gmail.com> - 1.1.2
+- windows deliverables
+- macos deliverables
+
 * Tue Jun 2 2026 Siak Hooi <siakhooi@gmail.com> - 1.1.1
 - scripts hardening
 - dependencies upgrade
