@@ -2,41 +2,7 @@
 
 semver utilities
 
-## Installation
-
-### Ubuntu/Debian
-
-```bash
-$ sudo curl -L https://siakhooi.github.io/apt/siakhooi-apt.list | sudo tee /etc/apt/sources.list.d/siakhooi-apt.list > /dev/null
-$ sudo curl -L https://siakhooi.github.io/apt/siakhooi-apt.gpg  | sudo tee /usr/share/keyrings/siakhooi-apt.gpg > /dev/null
-$ sudo apt update
-
-$ sudo apt install siakhooi-semvery
-```
-### Fedora/Red Hat
-
-```bash
-$ sudo curl -L https://siakhooi.github.io/rpms/siakhooi-rpms.repo | sudo tee /etc/yum.repos.d/siakhooi-rpms.repo > /dev/null
-
-$ sudo dnf install siakhooi-semvery
-# or
-$ sudo yum install siakhooi-semvery
-
-```
-
-## URL
-
-### Reference
-
-- <https://semver.org/>
-- <https://github.com/semver4j/semver4j>
-
-### Quality
-
-- Qlty.sh: <https://qlty.sh/gh/siakhooi/projects/semvery>
-- SonarCloud: <https://sonarcloud.io/project/overview?id=siakhooi_javacli-semvery>
-
-## Run
+## Examples
 
 ```bash
 semvery
@@ -66,6 +32,19 @@ semvery -o isEquivalent -r 1.0.0 1.0.1
 semvery --operation isEquivalent -r 1.0.0 1.0.1 2.0.2
 
 ```
+## Installation
+
+See [Installation.md](Installation.md) for Homebrew, Linux packages, Windows winget, and manual binary installs.
+
+## Quality
+
+- Qlty.sh: <https://qlty.sh/gh/siakhooi/projects/semvery>
+- SonarCloud: <https://sonarcloud.io/project/overview?id=siakhooi_javacli-semvery>
+
+## Reference
+
+- <https://semver.org/>
+- <https://github.com/semver4j/semver4j>
 
 ## Badges
 
